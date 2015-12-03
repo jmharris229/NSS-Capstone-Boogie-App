@@ -29,7 +29,7 @@ app.controller('authCtrl',
 						uid: authData.uid
 					});
 				//redirect to add device partial
-				$location.path("/addDevice/");
+				$location.path("/adddevice/");
 			  }
 			});
 		};

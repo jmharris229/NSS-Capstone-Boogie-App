@@ -1,6 +1,5 @@
 var app = angular.module('boogie', ['Auth', 'firebase', 'ngRoute']);
 
-
 	app.config(
 		['$routeProvider',
 			function($routeProvider){
@@ -8,6 +7,10 @@ var app = angular.module('boogie', ['Auth', 'firebase', 'ngRoute']);
 					.when('/',  {
 						templateUrl: '/partials/login.html',
 						controller: 'authCtrl'
+					})
+					.when('/adddevice/',  {
+						templateUrl: '/partials/addDevice.html',
+						controller: ''
 					})
 					.otherwise({ redirectTo: '/login'});
 			}
