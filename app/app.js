@@ -16,7 +16,7 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 					})
 					.when('/search/',  {
 						templateUrl: '/partials/search.html',
-						controller: 'searchconcertCtrl as SearchconcertCtrl'
+						controller: 'searchconcertCtrl'
 					})
 					.otherwise({ redirectTo: '/login'});
 			}

@@ -1,9 +1,8 @@
-<p>this is the search page</p>
+<h1>{{concerts[0].artists[0].name}}</h1>
 <section class="row">
-	<div ng-repeat="concert in SearchconcertCtrl.concerts" class="col-xs-4">
-<!-- 		<p>title:{{concert.title}}</p>
-		<p>artist:{{concert.artists[0].name}}</p>
-		<p>date:{{concert.datetime}}</p> -->
-		test
+	<div ng-repeat="concert in concerts" class="col-xs-4">
+		<p>{{concert.title}}</p>
+		<p>{{concert.formatted_datetime}}</p>
+		<button ng-click="">Add to profile</button>
 	</div>
 </section>
