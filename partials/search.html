@@ -3,6 +3,7 @@
 	<div ng-repeat="concert in concerts" class="col-xs-4">
 		<p>{{concert.title}}</p>
 		<p>{{concert.formatted_datetime}}</p>
-		<button ng-click="">Add to profile</button>
+		<p></p>
+		<button ng-click="saveConcert(concerts[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">Add to profile</button>
 	</div>
 </section>
