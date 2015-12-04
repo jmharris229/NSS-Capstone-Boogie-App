@@ -6,7 +6,7 @@ app.controller('searchconcertCtrl',
 	'fireAuth',
 	'$firebaseArray',
 	function($scope, $q, bitreq, fireAuth, Authref,$acctInfo){
-
+		//initial search of phish
 		bitreq.getResults()
         .then(
             function (concertData) {
@@ -21,11 +21,26 @@ app.controller('searchconcertCtrl',
             }
         );
 
-       $scope.saveConcert = function(band, Id, title, date,venueObj){
-       	var ref = new Firebase('https://boogie.firebaseio.com');
-       	var authData = ref.getAuth();
-       	console.log(authData);
-       	var myConcerts = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid+"/myconcerts/"+Id);
+      //user generated search
+      $scope.searchBand = function(){
+      	var bandname = $('#searchBandBar').val();
+      	bitreq.getResultsSearch(bandname)
+      		.then(
+      			function(concertData){
+      				console.log(concertData);
+      				$scope.concerts = concertData;
+      			},
+      			function(error){
+      				console.log(error);
+      			});
+      	}
+
+      //saves a concert to users profile
+      $scope.saveConcert = function(band, Id, title, date,venueObj){
+      	var ref = new Firebase('https://boogie.firebaseio.com');
+      	var authData = ref.getAuth();
+      	console.log(authData);
+      	var myConcerts = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid+"/myconcerts/"+Id);
 			myConcerts.set({
 				concertId: Id,
 				bandName: band,
@@ -40,7 +55,7 @@ app.controller('searchconcertCtrl',
 				venueCity: venueObj.city,
 				venueCountry: venueObj.country
 			});
-       }
+      }
 	}])
 
 
