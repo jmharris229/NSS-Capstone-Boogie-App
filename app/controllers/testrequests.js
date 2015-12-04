@@ -34,6 +34,18 @@ app.controller('searchconcertCtrl',
       				console.log(error);
       			});
       	}
+      	$scope.determineConcert = function(Id){
+      		var ref = new Firebase('https://boogie.firebaseio.com');
+      		var authData = ref.getAuth();
+      		var concertRef = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid+"/myconcerts/");
+      		var userConcerts = $acctInfo(concertRef);
+      		for(i=0; i<userConcerts.length;i++){
+      			if(userConcerts[i].id !== Id){
+      				return true;
+      			}
+      			return false;
+      		}
+      	}
 
       //saves a concert to users profile
       $scope.saveConcert = function(band, Id, title, date,venueObj){
