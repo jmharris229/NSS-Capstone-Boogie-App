@@ -1,12 +1,3 @@
-var auth = angular.module('Auth', ['firebase']);
-
-auth.factory("Authref", ["$firebaseAuth",
-	function($firebaseAuth){
-		var ref = new Firebase("https://boogie.firebaseio.com");
-		return ref;
-	}
-]);
-
 app.controller('authCtrl', 
 	['$scope',
 	'Authref',
