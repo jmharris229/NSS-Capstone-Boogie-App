@@ -1,8 +1,12 @@
+<section ng-include="'partials/navbar.html'"></section>
 <h1>{{ProfileCtrl.me.userinfo.name}}</h1>
 <img src="{{ProfileCtrl.me.userinfo.pic}}"/>
 <p>{{ProfileCtrl.me.userinfo.gender}}</p>
-<section class="row">
-	<div class="col-xs-4" ng-repeat="concert in ProfileCtrl.me.myconcerts">
-		{{concert.concertName}}
-	</div>
-</section>
+<article class="usershows">
+	<h3>My Shows</h3>
+	<section class="row">
+		<div class="col-xs-4" ng-repeat="concert in ProfileCtrl.me.myconcerts">
+			{{concert.concertName}}
+		</div>
+	</section>
+</article>
