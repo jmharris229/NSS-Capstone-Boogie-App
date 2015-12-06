@@ -5,21 +5,24 @@ app.controller('searchconcertCtrl',
 	'Authref',
 	'fireAuth',
 	'$firebaseArray',
-	function($scope, $q, bitreq, fireAuth, Authref,$acctInfo){
+	'$route',
+	'$location',
+	'$routeParams',
+	function($scope, $q, bitreq, fireAuth, Authref,$acctInfo,$route,$location,$routeParams){
 		//initial search of phish
-		bitreq.getResults()
-        .then(
-            function (concertData) {
-            	console.log(concertData)
-                // promise was fullfilled (regardless of outcome)
-                // checks for information will be peformed here
-                $scope.concerts = concertData;
-            },
-            function (error) {
-                // handle errors here
-                console.log(error.statusText);
-            }
-        );
+		// bitreq.getResults()
+  //       .then(
+  //           function (concertData) {
+  //           	console.log(concertData)
+  //               // promise was fullfilled (regardless of outcome)
+  //               // checks for information will be peformed here
+  //               $scope.concerts = concertData;
+  //           },
+  //           function (error) {
+  //               // handle errors here
+  //               console.log(error.statusText);
+  //           }
+  //       );
 
       //user generated search
       $scope.searchBand = function(){
@@ -29,22 +32,26 @@ app.controller('searchconcertCtrl',
       			function(concertData){
       				console.log(concertData);
       				$scope.concerts = concertData;
+      				// $route.reload();
       			},
       			function(error){
       				console.log(error);
       			});
       	}
+
       	$scope.determineConcert = function(Id){
       		var ref = new Firebase('https://boogie.firebaseio.com');
       		var authData = ref.getAuth();
       		var concertRef = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid+"/myconcerts/");
-      		var userConcerts = $acctInfo(concertRef);
-      		for(i=0; i<userConcerts.length;i++){
-      			if(userConcerts[i].id !== Id){
-      				return true;
-      			}
-      			return false;
-      		}
+      		var array = $acctInfo(concertRef);
+      		console.log(array);
+      		var child = array.$getRecord(Id);
+      		console.log(child);
+
+      			// if(child === -1){
+      			// 	return false;
+      			// }
+      			// return true;	
       	}
 
       //saves a concert to users profile

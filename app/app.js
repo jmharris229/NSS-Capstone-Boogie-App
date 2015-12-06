@@ -14,6 +14,10 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 						templateUrl: '/partials/addDevice.html',
 						controller: 'getfitbitdataCtrl as GetfitbitdataCtrl'
 					})
+					.when('/profile/',  {
+						templateUrl: '/partials/userprofile.html',
+						controller: 'profileCtrl as ProfileCtrl'
+					})
 					.when('/search/',  {
 						templateUrl: '/partials/search.html',
 						controller: 'searchconcertCtrl'

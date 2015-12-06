@@ -7,7 +7,6 @@ app.factory("Authref", ["$firebaseAuth",
 
 app.factory("fireAuth", ["$firebaseAuth",
 	function($firebaseAuth) {
-		var ref = new Firebase("https://boogie.firebaseio.com");
-	   return $firebaseAuth(ref);
+		return new Firebase("https://boogie.firebaseio.com");
 	}
 ]);
