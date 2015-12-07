@@ -11,4 +11,8 @@ app.controller('profileCtrl',
 		var me = object(userInfo);
 		console.log(me);
 		this.me = me;
+
+		this.logout = function(){
+			console.log("user unauthed")
+		}
 	}]);

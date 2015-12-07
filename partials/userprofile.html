@@ -3,10 +3,10 @@
 <img src="{{ProfileCtrl.me.userinfo.pic}}"/>
 <p>{{ProfileCtrl.me.userinfo.gender}}</p>
 <article class="usershows">
-	<h3>My Shows</h3>
-	<section class="row">
-		<div class="col-xs-4" ng-repeat="concert in ProfileCtrl.me.myconcerts">
-			{{concert.concertName}}
-		</div>
-	</section>
+	<section ng-include="'partials/savedConcerts.html'"></section>
 </article>
+<article>
+	<h3>Friends</h3>
+	<section ng-include="'partials/friends.html'"></section>
+</article>
+<a href="/#/friends">My friends</a>

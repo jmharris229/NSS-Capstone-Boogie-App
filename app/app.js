@@ -18,6 +18,14 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 						templateUrl: '/partials/userprofile.html',
 						controller: 'profileCtrl as ProfileCtrl'
 					})
+					.when('/users',  {
+						templateUrl: '/partials/users.html',
+						controller: 'userListCtrl as UserListCtrl'
+					})
+					.when('/user/:id',  {
+						templateUrl: '/partials/otheruser.html',
+						controller: 'userCtrl as UserCtrl'
+					})
 					.when('/search/',  {
 						templateUrl: '/partials/search.html',
 						controller: 'searchconcertCtrl'
