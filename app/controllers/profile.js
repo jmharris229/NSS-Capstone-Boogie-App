@@ -15,4 +15,9 @@ app.controller('profileCtrl',
 		this.logout = function(){
 			console.log("user unauthed")
 		}
+
+		this.gotoUser = function(id){
+			console.log(id)
+			$location.path('/user/'+id);
+		}
 	}]);

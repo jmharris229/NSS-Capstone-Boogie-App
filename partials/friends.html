@@ -1,0 +1,5 @@
+<ul>
+	<li ng-repeat="friend in ProfileCtrl.me.friends" >
+		<span ng-click="ProfileCtrl.gotoUser(friend.uid)">{{friend.name}}</span>
+	</li>
+</ul>

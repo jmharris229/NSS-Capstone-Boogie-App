@@ -9,7 +9,7 @@ app.controller('userListCtrl',
 		this.addFriend = function(Id, name, pic){
 			console.log("button clicked")
 			var you = fireAuth.getAuth();
-			var createFriend = new Firebase("https://boogie.firebaseio.com/users/"+you.auth.uid+"/friends/");
+			var createFriend = new Firebase("https://boogie.firebaseio.com/users/"+you.auth.uid+"/friends/"+Id);
 			createFriend.set({
 				uid: Id,
 				name: name,
