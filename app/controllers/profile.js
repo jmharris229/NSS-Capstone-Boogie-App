@@ -8,7 +8,7 @@ app.controller('profileCtrl',
 		//get personal info
 		var you = fireAuth.getAuth();
 		var userInfo = new Firebase("https://boogie.firebaseio.com/users/"+you.auth.uid);
-		var me = object(userInfo);
+		var me =  $userAcct(userInfo);
 		console.log(me);
 		this.me = me;
 
