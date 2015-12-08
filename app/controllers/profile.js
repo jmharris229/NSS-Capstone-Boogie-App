@@ -9,9 +9,16 @@ app.controller('profileCtrl',
 		var you = fireAuth.getAuth();
 		console.log(you);
 		var userInfo = new Firebase("https://boogie.firebaseio.com/users/"+you.uid);
-		var me =  $userAcct(userInfo);
-		console.log(me);
-		this.me = me;
+		this.me =  object(userInfo);
+
+
+		// var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
+		// 		.orderByChild("uid")
+		// 		.equalTo(this.me);
+
+		// this.userConcerts = $firebaseArray(concertRef);
+
+		
 
 		this.logout = function(){
 			console.log("user unauthed")
