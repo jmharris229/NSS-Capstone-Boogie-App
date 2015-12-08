@@ -3,26 +3,21 @@ app.controller('profileCtrl',
 	'$firebaseObject',
 	'fireAuth',
 	'$location',
-	function($userAcct, object, fireAuth, $location){
+	function($firebaseArray, object, fireAuth, $location){
 
 		//get personal info
 		var you = fireAuth.getAuth();
-		console.log(you);
 		var userInfo = new Firebase("https://boogie.firebaseio.com/users/"+you.uid);
 		this.me =  object(userInfo);
+		console.log(this.me.$id)
 
+		//saved concerts
+		var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
+				.orderByChild("userId")
+				.equalTo(this.me.$id);
 
-		// var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
-		// 		.orderByChild("uid")
-		// 		.equalTo(this.me);
+		this.userConcerts = $firebaseArray(concertRef);
 
-		// this.userConcerts = $firebaseArray(concertRef);
-
-		
-
-		this.logout = function(){
-			console.log("user unauthed")
-		}
 
 		this.gotoUser = function(id){
 			console.log(id)

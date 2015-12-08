@@ -16,7 +16,6 @@ app.controller('searchconcertCtrl',
       	bitreq.getResultsSearch(bandname)
       		.then(
       			function(concertData){
-      				console.log(concertData);
       				$scope.concerts = concertData;
       				// $route.reload();
       			},
@@ -30,7 +29,6 @@ app.controller('searchconcertCtrl',
       $scope.saveConcert = function(band, Id, title, date,venueObj){
       	var ref = new Firebase('https://boogie.firebaseio.com');
       	var authData = ref.getAuth();
-      	console.log(authData);
       	var myConcerts = new Firebase("https://boogie.firebaseio.com/concerts/"+Id);
 			myConcerts.set({
                         userId: authData.uid,
