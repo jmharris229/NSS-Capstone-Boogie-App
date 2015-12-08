@@ -47,10 +47,3 @@ app.controller('searchconcertCtrl',
 			});
       }
 	}])
-
-
-
-
-
-
-//shttps://api.fitbit.com/1/user/-/profile.json
