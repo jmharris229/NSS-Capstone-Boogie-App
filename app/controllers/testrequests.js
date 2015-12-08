@@ -9,20 +9,6 @@ app.controller('searchconcertCtrl',
 	'$location',
 	'$routeParams',
 	function($scope, $q, bitreq, fireAuth, Authref,$acctInfo,$route,$location,$routeParams){
-		//initial search of phish
-		// bitreq.getResults()
-  //       .then(
-  //           function (concertData) {
-  //           	console.log(concertData)
-  //               // promise was fullfilled (regardless of outcome)
-  //               // checks for information will be peformed here
-  //               $scope.concerts = concertData;
-  //           },
-  //           function (error) {
-  //               // handle errors here
-  //               console.log(error.statusText);
-  //           }
-  //       );
 
       //user generated search
       $scope.searchBand = function(){
@@ -39,28 +25,15 @@ app.controller('searchconcertCtrl',
       			});
       	}
 
-      	$scope.determineConcert = function(Id){
-      		var ref = new Firebase('https://boogie.firebaseio.com');
-      		var authData = ref.getAuth();
-      		var concertRef = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid+"/myconcerts/");
-      		var array = $acctInfo(concertRef);
-      		console.log(array);
-      		var child = array.$getRecord(Id);
-      		console.log(child);
-
-      			// if(child === -1){
-      			// 	return false;
-      			// }
-      			// return true;	
-      	}
 
       //saves a concert to users profile
       $scope.saveConcert = function(band, Id, title, date,venueObj){
       	var ref = new Firebase('https://boogie.firebaseio.com');
       	var authData = ref.getAuth();
       	console.log(authData);
-      	var myConcerts = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid+"/myconcerts/"+Id);
+      	var myConcerts = new Firebase("https://boogie.firebaseio.com/concerts/"+Id);
 			myConcerts.set({
+                        userId: authData.uid,
 				concertId: Id,
 				bandName: band,
 				concertName: title,
