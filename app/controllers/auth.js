@@ -11,11 +11,12 @@ app.controller('authCtrl',
 
 		boogieRef.onAuth(function (authData) {
 			if ( authData ) {
-					$location.path("/adddevice/")
+					location.href = '/#/adddevice/';
 			} else {
 				console.log("User has logged out");
 			}
 		})
+
 
 
 		$scope.fbLogin = function(){
@@ -24,15 +25,15 @@ app.controller('authCtrl',
 			   	console.log("Login Failed!", error);
 			  	} else {
 			   	fbid = authData.uid;
-			   	var newUserRef = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid+"/userinfo");
+			   	var newUserRef = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid);
 					newUserRef.set({
 						name: authData.facebook.cachedUserProfile.first_name,
 						gender: authData.facebook.cachedUserProfile.gender,
 						pic: authData.facebook.cachedUserProfile.picture.data.url,
 						uid: authData.uid
 					});
-
 			   	console.log("Authenticated successfully with payload:", authData);
+
 			  }
 			});
 		};

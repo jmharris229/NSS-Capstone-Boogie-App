@@ -2,9 +2,12 @@ app.controller('getfitbitdataCtrl',
 	['$location',
 	'$http',
 	function($location, $http){
-		console.log("hi there")
+		var boogieref = new Firebase("https://boogie.firebaseio.com/");
 		this.fitbitrequest = function(){
-			
 			$location.path("/profile");
+		}
+		this.logout = function(){
+			boogieref.unauth();
+			$location.path('/#/')
 		}
 	}]);

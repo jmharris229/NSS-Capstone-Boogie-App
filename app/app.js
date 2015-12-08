@@ -30,7 +30,7 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 						templateUrl: '/partials/search.html',
 						controller: 'searchconcertCtrl'
 					})
-					.otherwise({ redirectTo: '/login'});
+					.otherwise({ redirectTo: '/'});
 			}
 		]
 	);
