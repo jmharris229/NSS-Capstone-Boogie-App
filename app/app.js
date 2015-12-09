@@ -14,7 +14,7 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 						templateUrl: '/partials/addDevice.html',
 						controller: 'getfitbitdataCtrl as GetfitbitdataCtrl'
 					})
-					.when('/profile/',  {
+					.when('/profile/:id',  {
 						templateUrl: '/partials/userprofile.html',
 						controller: 'profileCtrl as ProfileCtrl'
 					})
@@ -22,14 +22,14 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 						templateUrl: '/partials/concert.html',
 						controller: 'concertCtrl as ConcertCtrl'
 					})
-					.when('/users/',  {
-						templateUrl: '/partials/users.html',
-						controller: 'userListCtrl as UserListCtrl'
-					})
-					.when('/user/:id',  {
-						templateUrl: '/partials/otheruser.html',
-						controller: 'userCtrl as UserCtrl'
-					})
+					// .when('/users/',  {
+					// 	templateUrl: '/partials/users.html',
+					// 	controller: 'userListCtrl as UserListCtrl'
+					// })
+					// .when('/user/:id',  {
+					// 	templateUrl: '/partials/otheruser.html',
+					// 	controller: 'userCtrl as UserCtrl'
+					// })
 					.when('/search/',  {
 						templateUrl: '/partials/search.html',
 						controller: 'searchconcertCtrl'
