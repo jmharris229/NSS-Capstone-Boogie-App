@@ -1,4 +1,4 @@
-	<h3>My Shows</h3>
+<!-- 	<h3>My Shows</h3>
 	<section class="row">
 		<div class="col-xs-4" ng-repeat="concert in ProfileCtrl.userConcerts">
 			<span ng-click="ProfileCtrl.gotoconcert(concert.$id)">{{concert.concertName}}</span>
@@ -6,4 +6,11 @@
 				<span ng-click="ProfileCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
 		</div>
 
-	</section>
+	</section> -->
+
+	<ul>
+		<li ng-repeat="concert in SavedconcertCtrl.userConcerts" ng-click="gotoConcert(concert.$id)">
+			{{concert.concertName}}
+			<span ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
+		</li>
+	</ul>

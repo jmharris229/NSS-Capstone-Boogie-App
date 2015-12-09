@@ -13,29 +13,4 @@ app.controller('profileCtrl',
 		//user object
 		this.me =  object(userInfo);
 
-		//saved concerts
-		var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
-				.orderByChild("userId")
-				.equalTo(this.me.$id);
-
-		this.userConcerts = $firebaseArray(concertRef);
-
-		//reference to concert steps
-		var userRefFit = new Firebase("https://boogie.firebaseio.com/users/"+id+"/concertSteps/"+this.Id);
-		//concert object
-		this.fitInfo = object(userRefFit);
-
-		this.gotoconcert = function(songId){
-			$location.path('/concerts/'+songId);
-		}
-
-		//remove concert function
-		this.removeConcert = function(concertId){
-			console.log(concertId)
-			this.userConcerts.$remove(this.userConcerts.$getRecord(concertId)).then(function(ref){
-					}, 
-					function(error){
-						console.log(error);
-			});
-		}
 	}]);
