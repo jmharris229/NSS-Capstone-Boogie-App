@@ -32,10 +32,6 @@ app.controller('profileCtrl',
 			$location.path('/concerts/'+songId);
 		}
 
-		this.gotoUser = function(id){
-			$location.path('/#/friends/');
-		}
-
 		//remove concert function
 		this.removeConcert = function(concertId){
 			console.log(concertId)
