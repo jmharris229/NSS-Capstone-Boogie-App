@@ -9,11 +9,8 @@ app.controller('savedconcertsCtrl',
 				.orderByChild("userId")
 				.equalTo(you.uid);
 
+		//users concert array
 		this.userConcerts = $firebaseArray(concertRef);
-
-		this.gotoconcert = function(songId){
-			$location.path('/concerts/'+songId);
-		}
 
 		//remove concert function
 		this.removeConcert = function(concertId){
@@ -25,6 +22,7 @@ app.controller('savedconcertsCtrl',
 			});
 		}
 
+		//redirect to a particular concert for a user
 		this.gotoConcert = function(id){
 			location.href='/#/concert/'+id;
 		}

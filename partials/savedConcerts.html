@@ -7,10 +7,12 @@
 		</div>
 
 	</section> -->
-
+<section ng-include="'partials/navbar.html'"></section>
+<h1>placeholder</h1>
 	<ul>
 		<li ng-repeat="concert in SavedconcertCtrl.userConcerts" ng-click="gotoConcert(concert.$id)">
 			{{concert.concertName}}
+			{{concert.rating}}
 			<span ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
 		</li>
 	</ul>
