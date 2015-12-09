@@ -9,7 +9,6 @@ app.controller('friendlistCtrl',
 		this.friendsArray = $firebaseArray(friendsref); 
 
 		this.gotoUser = function(id){
-			console.log(id)
 			location.href='/#/profile/'+id;
 		}
 	}])
