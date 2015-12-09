@@ -1,3 +1,5 @@
+<section ng-include="'partials/navbar.html'"></section>
+<h1>placeholder</h1>
 <h1>{{ConcertCtrl.concert.bandName}}</h1>
 <h3>{{ConcertCtrl.concert.concertDate}}</h3>
 <h3>{{ConcertCtrl.concert.concertName}}</h3>
@@ -6,4 +8,3 @@
 <button ng-click="ConcertCtrl.stopCount()">Stop</button>
 <p>{{ConcertCtrl.concert.rating}}</p>
 <button>Add Concert</button>
-<span ng-click="ConcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>

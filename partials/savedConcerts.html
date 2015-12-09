@@ -2,5 +2,8 @@
 	<section class="row">
 		<div class="col-xs-4" ng-repeat="concert in ProfileCtrl.userConcerts">
 			<span ng-click="ProfileCtrl.gotoconcert(concert.$id)">{{concert.concertName}}</span>
+			<p>rating: {{concert.rating}}</p>
+				<span ng-click="ProfileCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
 		</div>
+
 	</section>

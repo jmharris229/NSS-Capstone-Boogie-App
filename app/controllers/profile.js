@@ -35,4 +35,14 @@ app.controller('profileCtrl',
 		this.gotoUser = function(id){
 			$location.path('/profile/'+id);
 		}
+
+		//remove concert function
+		this.removeConcert = function(concertId){
+			console.log(concertId)
+			this.userConcerts.$remove(this.userConcerts.$getRecord(concertId)).then(function(ref){
+					}, 
+					function(error){
+						console.log(error);
+			});
+		}
 	}]);
