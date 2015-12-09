@@ -37,7 +37,7 @@ app.controller('searchconcertCtrl',
       	var myConcerts = new Firebase("https://boogie.firebaseio.com/concerts/");
 			myConcerts.push({
             userId: authData.uid,
-            saveState: false,
+            saveState: true,
 				concertId: Id,
 				bandName: band,
 				concertName: title,

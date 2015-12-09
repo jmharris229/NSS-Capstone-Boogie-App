@@ -13,7 +13,8 @@ app.controller('userListCtrl',
 			createFriend.set({
 				uid: Id,
 				name: name,
-				pic:pic
+				pic:pic, 
+				savedState: true
 			});
 		}
 	}

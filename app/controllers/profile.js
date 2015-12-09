@@ -33,7 +33,7 @@ app.controller('profileCtrl',
 		}
 
 		this.gotoUser = function(id){
-			$location.path('/profile/'+id);
+			$location.path('/#/friends/');
 		}
 
 		//remove concert function
