@@ -1,6 +1,6 @@
 	<h3>My Shows</h3>
 	<section class="row">
 		<div class="col-xs-4" ng-repeat="concert in ProfileCtrl.userConcerts">
-			<span ng-click="ProfileCtrl.gotoconcert(concert.concertId)">{{concert.concertName}}</span>
+			<span ng-click="ProfileCtrl.gotoconcert(concert.$id)">{{concert.concertName}}</span>
 		</div>
 	</section>

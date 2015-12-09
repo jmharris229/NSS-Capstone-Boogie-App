@@ -7,25 +7,25 @@ app.controller('concertCtrl',
 	function($firebaseObject,$firebaseArray, fireAuth,$routeParams,$route,$location){
 
 		var you = fireAuth.getAuth();
+		console.log(you.uid)
 		//creates reference to particular concert
 		this.Id= $routeParams.id;
 		console.log(this.Id);
-		var ref = new Firebase("https://boogie.firebaseio.com/concerts/"+this.Id);
-		var userRefFit = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/concertSteps/"+this.Id);
+		var ref = new Firebase("https://boogie.firebaseio.com/concerts/"+this.Id)
 
-		//concert object
-		this.concertArray =$firebaseArray(ref);
+		//concert object and array
+		// this.concertArray =$firebaseObject(ref);
+		// console.log(this.concertArray);
 		this.concert = $firebaseObject(ref);
 		//concert step object
-		this.concertSteps = $firebaseObject(userRefFit);
+		// this.concertSteps = $firebaseObject(userRefFit);
 
 		var initialSteps;
 		//gets initial steps before concert
 		this.startCount = function(){
 			initialSteps = (Math.floor(Math.random()*50)+1)*100;
-			userRefFit.set({
-				concertId: this.Id,
-				initSteps: initialSteps
+			ref.update({
+				startSteps: initialSteps
 			});
 
 		}
@@ -33,10 +33,10 @@ app.controller('concertCtrl',
 		//gets steps after concert
 		this.stopCount = function(){
 			var postSteps = (Math.floor(Math.random()*50)+51)*100;
-			var stepDifference = postSteps - this.concertSteps.initSteps;
-			userRefFit.update({
-				afterSteps: postSteps,
-				dif: stepDifference
+			var stepDifference = postSteps - this.concert.startSteps;
+			ref.update({
+				endSteps: postSteps,
+				difference: stepDifference
 			});
 			calcRating(stepDifference, this.Id);
 		}
@@ -57,12 +57,13 @@ app.controller('concertCtrl',
 			else if(stepDifference>8000 && stepDifference<10000){
 				this.rating = 5;
 			}
-			userRefFit.update({
+			ref.update({
 				rating: this.rating
 			});
-			location.href = '/#/profile/concerts/'+id;
+			location.href = '/#/concerts/'+id;
 		}
 
+		//remove concert function
 		this.removeConcert = function(concertId){
 			this.concertArray.$remove(this.concertArray.$getRecord(concertId)).then(function(ref){
 					}, 

@@ -4,6 +4,6 @@
 <h5>At {{ConcertCtrl.concert.venueName}} in {{ConcertCtrl.concert.venueCity}}, {{ConcertCtrl.concert.venueCountry}}</h5>
 <button ng-click="ConcertCtrl.startCount()">Start</button>
 <button ng-click="ConcertCtrl.stopCount()">Stop</button>
-<p>{{ConcertCtrl.concertSteps.rating}}</p>
+<p>{{ConcertCtrl.concert.rating}}</p>
 <button>Add Concert</button>
 <span ng-click="ConcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>

@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-xs-4" ng-repeat="user in UserListCtrl.users">
-		{{user.userinfo.name}}
-		<button ng-click="UserListCtrl.addFriend(user.$id, user.userinfo.name, user.userinfo.pic)">Add Friend</button>
+		{{user.name}}
+		<button ng-click="UserListCtrl.addFriend(user.$id, user.name, user.pic)">Add Friend</button>
 	</div>
 </div>

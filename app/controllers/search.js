@@ -34,9 +34,10 @@ app.controller('searchconcertCtrl',
       $scope.saveConcert = function(band, Id, title, date,venueObj){
       	var ref = new Firebase('https://boogie.firebaseio.com');
       	var authData = ref.getAuth();
-      	var myConcerts = new Firebase("https://boogie.firebaseio.com/concerts/"+Id);
-			myConcerts.set({
-                        userId: authData.uid,
+      	var myConcerts = new Firebase("https://boogie.firebaseio.com/concerts/");
+			myConcerts.push({
+            userId: authData.uid,
+            saveState: false,
 				concertId: Id,
 				bandName: band,
 				concertName: title,
