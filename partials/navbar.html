@@ -1,13 +1,13 @@
-<nav ng-controller="class="navbar navbar-default navbar-fixed-top">	
+<nav ng-controller="navCtrl"class="navbar navbar-default navbar-fixed-top">	
   <div class="container">
 	<div class="dropdown">
 		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
 		</button>
 		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-		<li><a href="#/profile">Profile</a></li>
+		<li ng-click="profile()">Profile</li>
 		<li><a href="#/search">Search Concerts</a></li>
-		<li><a href="#" ng-click="ProfileCtrl.logout()">Logout</a></li>
+		<li ng-click="logout()">Logout</li>
 		</ul>
 	</div>
   </div>

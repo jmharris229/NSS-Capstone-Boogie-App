@@ -63,14 +63,5 @@ app.controller('concertCtrl',
 			location.href = '/#/concerts/'+id;
 		}
 
-		//remove concert function
-		this.removeConcert = function(concertId){
-			this.concertArray.$remove(this.concertArray.$getRecord(concertId)).then(function(ref){
-					}, 
-					function(error){
-						console.log(error);
-					});
-		}
-
 	}
 ])
