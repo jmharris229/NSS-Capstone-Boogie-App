@@ -24,6 +24,7 @@ app.controller('savedconcertsCtrl',
 
 		//redirect to a particular concert for a user
 		this.gotoConcert = function(id){
+			console.log(id);
 			location.href='/#/concert/'+id;
 		}
 	}])
