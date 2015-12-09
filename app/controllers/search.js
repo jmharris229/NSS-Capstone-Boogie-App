@@ -24,6 +24,7 @@ app.controller('searchconcertCtrl',
       			});
       	}
 
+      	//go to a single concert detail
       	$scope.goToConcert = function(songId){
       		$location.path('/concerts/'+songId);
       	}

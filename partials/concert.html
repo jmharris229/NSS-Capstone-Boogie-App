@@ -5,3 +5,5 @@
 <button ng-click="ConcertCtrl.startCount()">Start</button>
 <button ng-click="ConcertCtrl.stopCount()">Stop</button>
 <p>{{ConcertCtrl.concertSteps.rating}}</p>
+<button>Add Concert</button>
+<span ng-click="ConcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>

@@ -14,6 +14,7 @@ app.controller('concertCtrl',
 		var userRefFit = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/concertSteps/"+this.Id);
 
 		//concert object
+		this.concertArray =$firebaseArray(ref);
 		this.concert = $firebaseObject(ref);
 		//concert step object
 		this.concertSteps = $firebaseObject(userRefFit);
@@ -38,8 +39,6 @@ app.controller('concertCtrl',
 				dif: stepDifference
 			});
 			calcRating(stepDifference, this.Id);
-			
-
 		}
 
 		function calcRating(stepDifference, id){
@@ -58,16 +57,19 @@ app.controller('concertCtrl',
 			else if(stepDifference>8000 && stepDifference<10000){
 				this.rating = 5;
 			}
-			console.log(this.rating);
 			userRefFit.update({
 				rating: this.rating
 			});
-			console.log(id)
 			location.href = '/#/profile/concerts/'+id;
-
-
 		}
 
+		this.removeConcert = function(concertId){
+			this.concertArray.$remove(this.concertArray.$getRecord(concertId)).then(function(ref){
+					}, 
+					function(error){
+						console.log(error);
+					});
+		}
 
 	}
 ])
