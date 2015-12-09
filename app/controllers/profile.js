@@ -21,7 +21,7 @@ app.controller('profileCtrl',
 		this.userConcerts = $firebaseArray(concertRef);
 
 		this.gotoconcert = function(songId){
-			$location.path('/profile/concerts/'+songId);
+			$location.path('/concerts/'+songId);
 		}
 
 		this.gotoUser = function(id){

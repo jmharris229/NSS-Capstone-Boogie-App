@@ -18,7 +18,7 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 						templateUrl: '/partials/userprofile.html',
 						controller: 'profileCtrl as ProfileCtrl'
 					})
-					.when('/profile/concerts/:id',  {
+					.when('/concerts/:id',  {
 						templateUrl: '/partials/concert.html',
 						controller: 'concertCtrl as ConcertCtrl'
 					})

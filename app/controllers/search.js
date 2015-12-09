@@ -24,6 +24,10 @@ app.controller('searchconcertCtrl',
       			});
       	}
 
+      	$scope.goToConcert = function(songId){
+      		$location.path('/concerts/'+songId);
+      	}
+
 
       //saves a concert to users profile
       $scope.saveConcert = function(band, Id, title, date,venueObj){

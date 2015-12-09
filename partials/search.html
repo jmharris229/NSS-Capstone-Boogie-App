@@ -4,7 +4,7 @@
 <h1>{{concerts[0].artists[0].name}}</h1>
 <section class="row">
 	<div ng-repeat="concert in concerts" ng-hide="determineConcert(concert.id)" class="col-xs-4">
-		<p>{{concert.title}}</p>
+		<p ng-click="goToConcert(concert.concertId)">{{concert.title}}</p>
 		<p>{{concert.formatted_datetime}}</p>
 		<p></p>
 		<button ng-click="saveConcert(concerts[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">Add to profile</button>
