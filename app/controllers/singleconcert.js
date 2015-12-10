@@ -4,7 +4,8 @@ app.controller('concertCtrl',
 	'fireAuth',
 	'$routeParams',
 	'$location',
-	function($firebaseObject,$firebaseArray, fireAuth,$routeParams,$route,$location){
+	'$scope',
+	function($firebaseObject,$firebaseArray, fireAuth, $routeParams, $location, $scope){
 
 		var you = fireAuth.getAuth();
 		//creates reference to particular concert
@@ -12,7 +13,8 @@ app.controller('concertCtrl',
 		var ref = new Firebase("https://boogie.firebaseio.com/concerts/"+this.Id);
 
 		//creates a snapshot of this concert so that the concert id can be taken
-		this.attendees =[];
+		this.attendees = [];
+		
 		ref.on("value", function(snapshot) {
 			console.log("original snapshot of attendees", snapshot.val())
   			var concertInfoId = snapshot.val().concertId;
@@ -28,12 +30,17 @@ app.controller('concertCtrl',
 						var userInfo = snapshot.val();
 						console.log(this.attendees);
 						this.attendees.push(userInfo);
-					})
-  				});
-  			},function(errorObject){
+		  				$scope.$digest();
+						console.log(this.attendees);
+					}.bind(this))
+  				}.bind(this));
+
+
+
+  			}.bind(this),function(errorObject){
   				console.log(errorObject);
   			});
-		}, function (errorObject) {
+		}.bind(this), function (errorObject) {
   			console.log("The read failed: " + errorObject.code);
 		});
 

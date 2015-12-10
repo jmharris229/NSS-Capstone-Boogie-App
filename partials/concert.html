@@ -1,3 +1,4 @@
+
 <section ng-include="'partials/navbar.html'"></section>
 <h1>placeholder</h1>
 <h1>{{ConcertCtrl.concert.bandName}}</h1>
@@ -10,9 +11,11 @@
 <button>Add Concert</button>
 <section>
 	<ul>
-		<li ng-repeat="attendee in ConcertCtrl.attendees">
-			{{attendee.pic}}
-			{{attendee.name}}
+		<li ng-repeat="item in ConcertCtrl.attendees">
+			<img src="{{item.pic}}">
+			{{item.name}}
 		</li>
 	</ul>
 </section>
+
+
