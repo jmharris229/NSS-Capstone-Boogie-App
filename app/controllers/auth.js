@@ -17,8 +17,6 @@ app.controller('authCtrl',
 			}
 		})
 
-
-
 		$scope.fbLogin = function(){
 			Authref.authWithOAuthPopup("facebook", function(error, authData) {
 				if (error) {
@@ -32,13 +30,9 @@ app.controller('authCtrl',
 						pic: authData.facebook.cachedUserProfile.picture.data.url,
 						uid: authData.uid
 					});
-			   	console.log("Authenticated successfully with payload:", authData);
-
 			  }
 			});
 		};
-
-
 	}]);
 
 

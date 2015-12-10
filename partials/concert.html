@@ -8,3 +8,11 @@
 <button ng-click="ConcertCtrl.stopCount()">Stop</button>
 <p>{{ConcertCtrl.concert.rating}}</p>
 <button>Add Concert</button>
+<section>
+	<ul>
+		<li ng-repeat="attendee in ConcertCtrl.attendees">
+			{{attendee.pic}}
+			{{attendee.name}}
+		</li>
+	</ul>
+</section>

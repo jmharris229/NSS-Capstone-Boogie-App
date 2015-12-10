@@ -7,19 +7,40 @@ app.controller('concertCtrl',
 	function($firebaseObject,$firebaseArray, fireAuth,$routeParams,$route,$location){
 
 		var you = fireAuth.getAuth();
-		console.log(you.uid)
 		//creates reference to particular concert
 		this.Id= $routeParams.id;
-		console.log(this.Id);
-		var ref = new Firebase("https://boogie.firebaseio.com/concerts/"+this.Id)
+		var ref = new Firebase("https://boogie.firebaseio.com/concerts/"+this.Id);
+
+		//creates a snapshot of this concert so that the concert id can be taken
+		this.attendees =[];
+		ref.on("value", function(snapshot) {
+			console.log("original snapshot of attendees", snapshot.val())
+  			var concertInfoId = snapshot.val().concertId;
+  			var attendeesRef = new Firebase("https://boogie.firebaseio.com/concerts/");
+  			attendeesRef.orderByChild("concertId").equalTo(concertInfoId).once("value", function(snapshot){
+  				var concertGoers = snapshot.val();
+
+  				snapshot.forEach(function (concert) {
+  					console.log("concert",concert.val().userId);
+
+  					var attendeeRef = new Firebase("https://boogie.firebaseio.com/users/"+concert.val().userId);
+  					attendeeRef.once("value", function(snapshot){
+						var userInfo = snapshot.val();
+						console.log(this.attendees);
+						this.attendees.push(userInfo);
+					})
+  				});
+  			},function(errorObject){
+  				console.log(errorObject);
+  			});
+		}, function (errorObject) {
+  			console.log("The read failed: " + errorObject.code);
+		});
 
 		//concert object and array
-		// this.concertArray =$firebaseObject(ref);
-		// console.log(this.concertArray);
 		this.concert = $firebaseObject(ref);
-		//concert step object
-		// this.concertSteps = $firebaseObject(userRefFit);
 
+		//functionality for rating a concert
 		var initialSteps;
 		//gets initial steps before concert
 		this.startCount = function(){
