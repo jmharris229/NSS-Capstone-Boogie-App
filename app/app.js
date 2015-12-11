@@ -26,11 +26,11 @@ var app = angular.module('boogie', ['firebase', 'ngRoute']);
 						templateUrl: '/partials/users.html',
 						controller: 'userListCtrl as UserListCtrl'
 					})
-					.when('/friends/',  {
+					.when('/friends/:id',  {
 						templateUrl: '/partials/friends.html',
 						controller: 'friendlistCtrl as FriendlistCtrl'
 					})
-					.when('/concerts/', {
+					.when('/concerts/:id', {
 						templateUrl:'/partials/savedConcerts.html',
 						controller: 'savedconcertsCtrl as SavedconcertCtrl'
 					})

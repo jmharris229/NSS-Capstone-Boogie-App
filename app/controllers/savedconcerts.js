@@ -1,16 +1,20 @@
 app.controller('savedconcertsCtrl', 
 	['fireAuth',
 	'$firebaseArray',
-	function(fireAuth, $firebaseArray){
-		var you = fireAuth.getAuth();
+	'$routeParams',
+	function(fireAuth, $firebaseArray,$routeParams){
+		var you = $routeParams.id
 
+		this.authObj = you.uid;
+		console.log(this.authObj)
 		//saved concerts
 		var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
 				.orderByChild("userId")
-				.equalTo(you.uid);
+				.equalTo(you);
 
 		//users concert array
 		this.userConcerts = $firebaseArray(concertRef);
+		console.log(this.userConcerts)
 
 		//remove concert function
 		this.removeConcert = function(concertId){
@@ -20,6 +24,13 @@ app.controller('savedconcertsCtrl',
 					function(error){
 						console.log(error);
 			});
+		}
+
+		//ng hide 
+		this.hideDelete = function(){
+			if(you.uid){
+				return false;
+			}
 		}
 
 		//redirect to a particular concert for a user

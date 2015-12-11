@@ -6,7 +6,11 @@
 		</button>
 		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 		<li ng-click="profile()">Profile</li>
+		<li><a href="#/concerts/{{you.uid}}">My Concerts</a></li>
+		<li><a href="#/friends/{{you.uid}}">Friends</a></li>
+		<li role="separator" class="divider"></li>
 		<li><a href="#/search">Search Concerts</a></li>
+		<li role="separator" class="divider"></li>
 		<li ng-click="logout()">Logout</li>
 		</ul>
 	</div>

@@ -4,11 +4,11 @@ app.controller('navCtrl',
 	'$location',
 	function($scope, fireAuth, $location){
 
-		var you = fireAuth.getAuth();
+		$scope.you = fireAuth.getAuth();
 
 		$scope.profile = function(){
 			console.log(you.uid);
-			location.href = '/#/profile/'+you.uid;
+			location.href = '/#/profile/'+$scope.you.uid;
 		}
 		$scope.logout = function(){
 			fireAuth.unauth();
