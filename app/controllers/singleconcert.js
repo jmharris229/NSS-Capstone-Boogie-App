@@ -16,7 +16,6 @@
 		this.attendees = [];
 		
 		ref.on("value", function(snapshot) {
-			console.log("original snapshot of attendees", snapshot.val())
   			var concertInfoId = snapshot.val().concertId;
   			var attendeesRef = new Firebase("https://boogie.firebaseio.com/concerts/");
   			attendeesRef.orderByChild("concertId").equalTo(concertInfoId).once("value", function(snapshot){
@@ -25,11 +24,9 @@
   				snapshot.forEach(function (concert) {
 
   					var attendeeRef = new Firebase("https://boogie.firebaseio.com/users/"+concert.val().userId);
-  					console.log(concert.val().difference)
   					attendeeRef.update({concertSteps: concert.val().difference})
   					attendeeRef.once("value", function(snapshot){
 						var userInfo = snapshot.val();
-						console.log(this.attendees);
 						this.attendees.push(userInfo);
 		  				$scope.$digest();
 					}.bind(this))

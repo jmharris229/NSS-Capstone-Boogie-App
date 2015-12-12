@@ -11,12 +11,9 @@ app.controller('userListCtrl',
 		//create a users friends list
 		userfriends.on("value", function(snapshot){
 			var rawfriends = snapshot.val();
-
-			console.log(rawfriends);
 			for(key in rawfriends){
 				friendlist.push(key);
 			}
-			console.log(friendlist);
 		});
 
 		this.isFriend = function(id){
