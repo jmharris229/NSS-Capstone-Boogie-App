@@ -16,17 +16,13 @@ app.controller('searchconcertCtrl',
   		savedConcerts.orderByChild("userId").equalTo(you.uid).once("value", 
   			function(snapshot){
 	  			 var rawConcerts = snapshot.val();
-	  			 console.log(rawConcerts)
 	  			 for(key in rawConcerts){
 	  			 	concertListKeys.push(key);
 	  			 }
-	  			 console.log(concertListKeys);
 	  			 for(var i= 0; i<concertListKeys.length;i++){
 	  			 	var concert = new Firebase("https://boogie.firebaseio.com/concerts/"+concertListKeys[i]);
 	  			 	concert.on("value", function(snapshot){
-	  			 		console.log(snapshot.val().concertId)
 	  			 		concertIdList.push(snapshot.val().concertId);
-	  			 		console.log(concertIdList);
 	  			 	}) 	
 	  			 }
   			});
@@ -46,8 +42,14 @@ app.controller('searchconcertCtrl',
       	bitreq.getResultsSearch(bandname)
       		.then(
       			function(concertData){
-      				$scope.concerts = concertData;
-      				// $route.reload();
+      				if(concertData.length === 0){
+      					$scope.concerts = concertData;
+      					$scope.message = "no concerts found"
+      				}else{					
+	      				$scope.concerts = concertData;
+	      				 $scope.message = ""
+	      				// $route.reload();
+      				}
       			},
       			function(error){
       				console.log(error);
