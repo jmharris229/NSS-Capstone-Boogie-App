@@ -5,6 +5,30 @@ app.controller('userListCtrl',
 		var ref = new Firebase("https://boogie.firebaseio.com/users/");
 		this.users = userList(ref);
 		var you = fireAuth.getAuth();
+		var userfriends = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/friends");
+		var friendlist = [];
+
+		//create a users friends list
+		userfriends.on("value", function(snapshot){
+			var rawfriends = snapshot.val();
+
+			console.log(rawfriends);
+			for(key in rawfriends){
+				friendlist.push(key);
+			}
+			console.log(friendlist);
+		});
+
+		this.isFriend = function(id){
+			console.log("running is friend")
+			for(var i=0; i<friendlist.length; i++){
+				if(friendlist[i] === id){
+					return true;
+				}
+				return false
+			}
+		}
+
 
 		this.addFriend = function(Id, name, pic){
 			var createFriend = new Firebase("https://boogie.firebaseio.com/users/"+you.auth.uid+"/friends/"+Id);

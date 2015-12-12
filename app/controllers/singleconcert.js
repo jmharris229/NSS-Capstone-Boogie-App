@@ -1,4 +1,4 @@
-app.controller('concertCtrl',
+ app.controller('concertCtrl',
 	['$firebaseObject',
 	'$firebaseArray',
 	'fireAuth',
