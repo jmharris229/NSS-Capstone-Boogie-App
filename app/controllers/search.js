@@ -9,6 +9,36 @@ app.controller('searchconcertCtrl',
 	'$location',
 	'$routeParams',
 	function($scope, $q, bitreq, fireAuth, Authref,$acctInfo,$route,$location,$routeParams){
+		var you = fireAuth.getAuth();
+		var savedConcerts = new Firebase("https://boogie.firebaseio.com/concerts/");
+		var concertListKeys = [];
+		var concertIdList = [];
+  		savedConcerts.orderByChild("userId").equalTo(you.uid).once("value", 
+  			function(snapshot){
+	  			 var rawConcerts = snapshot.val();
+	  			 console.log(rawConcerts)
+	  			 for(key in rawConcerts){
+	  			 	concertListKeys.push(key);
+	  			 }
+	  			 console.log(concertListKeys);
+	  			 for(var i= 0; i<concertListKeys.length;i++){
+	  			 	var concert = new Firebase("https://boogie.firebaseio.com/concerts/"+concertListKeys[i]);
+	  			 	concert.on("value", function(snapshot){
+	  			 		console.log(snapshot.val().concertId)
+	  			 		concertIdList.push(snapshot.val().concertId);
+	  			 		console.log(concertIdList);
+	  			 	}) 	
+	  			 }
+  			});
+
+  		$scope.testConcert = function(conId){
+  			for(var i = 0; i<concertIdList.length; i++){
+  				if(conId === concertIdList[i]){
+  					return false;
+  				}
+  				return true
+  			}
+  		}
 
       //user generated search
       $scope.searchBand = function(){
@@ -53,3 +83,4 @@ app.controller('searchconcertCtrl',
 			});
       }
 	}])
+

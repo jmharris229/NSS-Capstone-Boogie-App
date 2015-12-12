@@ -4,7 +4,7 @@
 <button ng-click="searchBand()"></button>
 <h1>{{concerts[0].artists[0].name}}</h1>
 <section class="row">
-	<div ng-repeat="concert in concerts" ng-hide="determineConcert(concert.id)" class="col-xs-4">
+	<div ng-repeat="concert in concerts" ng-if="testConcert(concert.id)" class="col-xs-4">
 		<p ng-click="goToConcert(concert.concertId)">{{concert.title}}</p>
 		<p>{{concert.formatted_datetime}}</p>
 		<p></p>
