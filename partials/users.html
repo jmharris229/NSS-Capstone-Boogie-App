@@ -2,7 +2,7 @@
 <h1>Placeholder</h1>
 <div class="row">
 	<div class="col-xs-4" ng-repeat="user in UserListCtrl.users" ng-if="UserListCtrl.hideYou(user.uid)">
-		{{user.name}}
+		<a href="/#/profile/{{user.uid}}">{{user.name}}</a>
 		<button ng-hide="UserListCtrl.isFriend(user.uid)" ng-click="UserListCtrl.addFriend(user.$id, user.name, user.pic)">Add Friend</button>
 	</div>
 </div>
