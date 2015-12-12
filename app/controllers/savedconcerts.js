@@ -6,7 +6,6 @@ app.controller('savedconcertsCtrl',
 		var you = $routeParams.id
 
 		this.authObj = you.uid;
-		console.log(this.authObj)
 		//saved concerts
 		var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
 				.orderByChild("userId")
@@ -14,7 +13,6 @@ app.controller('savedconcertsCtrl',
 
 		//users concert array
 		this.userConcerts = $firebaseArray(concertRef);
-		console.log(this.userConcerts)
 
 		//remove concert function
 		this.removeConcert = function(concertId){

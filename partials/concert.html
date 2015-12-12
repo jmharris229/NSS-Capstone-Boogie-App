@@ -8,12 +8,12 @@
 <button ng-hide="ConcertCtrl.concert.rating != 0" ng-click="ConcertCtrl.startCount()">Start</button>
 <button ng-hide="ConcertCtrl.concert.rating != 0" ng-click="ConcertCtrl.stopCount()">Stop</button>
 <p>{{ConcertCtrl.concert.rating}}</p>
-<button>Add Concert</button>
 <section>
 	<ul>
 		<li ng-repeat="item in ConcertCtrl.attendees">
 			<img src="{{item.pic}}">
 			{{item.name}}
+			{{item.concertSteps}}
 		</li>
 	</ul>
 </section>

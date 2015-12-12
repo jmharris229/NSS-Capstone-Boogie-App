@@ -3,7 +3,8 @@ app.controller('authCtrl',
 	'Authref',
 	'$firebaseArray',
 	'$location',
-	function($scope,Authref, $currentAcct, $location){
+	'$firebaseAuth',
+	function($scope,Authref, $currentAcct, $location, $firebaseAuth){
 		//login a user using facebook
 		var fbid;
 
@@ -28,11 +29,48 @@ app.controller('authCtrl',
 						name: authData.facebook.cachedUserProfile.first_name,
 						gender: authData.facebook.cachedUserProfile.gender,
 						pic: authData.facebook.cachedUserProfile.picture.data.url,
-						uid: authData.uid
+						uid: authData.uid, 
+						concertSteps: 0
 					});
 			  }
 			});
 		};
+
+		$scope.createUser = function(){
+			var boogieUsers = new Firebase("https://boogie.firebaseio.com/users/");
+			console.log($scope.email, $scope.password)
+			boogieUsers.createUser({
+				email: $('#email').val(),
+				password: $('#pass').val()
+			}).then(function(userData){
+				var ref = new Firebase("https://boogie.firebaseio.com/users/"+userData.uid+"/userinfo");
+				ref.set({
+						name: "",
+						gender: "",
+						pic: "",
+						uid: authData.uid
+				});
+				console.log("user created with id:" +userData.uid);
+ 					$scope.loginUser();
+			}).catch(function(error){
+				console.log("user not created with error:" +error);
+			});
+		};
+			$scope.loginUser = function(){
+				Authref.$authWithPassword({
+					email: $scope.email,
+					password: $scope.password
+				}).then(function(userData){
+					console.log("user logged in with id:" +userData.uid);
+					location.href = '/#/adddevice/';
+				}).catch(function(error){
+					console.log("user not logged with error:" +error);
+				});
+			};
+
+
+
+
 	}]);
 
 

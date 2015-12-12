@@ -23,25 +23,20 @@
   				var concertGoers = snapshot.val();
 
   				snapshot.forEach(function (concert) {
-  					console.log("concert",concert.val().userId);
 
   					var attendeeRef = new Firebase("https://boogie.firebaseio.com/users/"+concert.val().userId);
+  					console.log(concert.val().difference)
+  					attendeeRef.update({concertSteps: concert.val().difference})
   					attendeeRef.once("value", function(snapshot){
 						var userInfo = snapshot.val();
 						console.log(this.attendees);
 						this.attendees.push(userInfo);
 		  				$scope.$digest();
-						console.log(this.attendees);
 					}.bind(this))
   				}.bind(this));
-
-
-
   			}.bind(this),function(errorObject){
-  				console.log(errorObject);
   			});
 		}.bind(this), function (errorObject) {
-  			console.log("The read failed: " + errorObject.code);
 		});
 
 		//concert object and array
