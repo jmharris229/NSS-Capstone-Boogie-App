@@ -5,10 +5,11 @@
 <h1>{{concerts[0].artists[0].name}}</h1>
 <h5>{{message}}</h5>
 <section class="row">
-	<div ng-repeat="concert in concerts" ng-if="testConcert(concert.id)" class="col-xs-4">
-		<p ng-click="goToConcert(concert.concertId)">{{concert.title}}</p>
+	<div ng-repeat="concert in concerts"   class="col-xs-4">
+		<p ng-click="goToConcert(concert.id)">{{concert.title}}</p>
+		<p>{{concert.id}}</p>
 		<p>{{concert.formatted_datetime}}</p>
 		<p></p>
-		<button ng-click="saveConcert(concerts[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">Add to profile</button>
+		<button  ng-click="saveConcert(concerts[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">Add to profile</button>
 	</div>
 </section>

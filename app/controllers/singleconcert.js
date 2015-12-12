@@ -16,7 +16,7 @@
 		//creates a snapshot of this concert so that the concert id can be taken
 		this.attendees = [];
 		
-		ref.on("value", function(snapshot) {
+		ref.once("value", function(snapshot) {
   			var concertInfoId = snapshot.val().concertId;
   			var attendeesRef = new Firebase("https://boogie.firebaseio.com/concerts/");
   			attendeesRef.orderByChild("concertId").equalTo(concertInfoId).once("value", function(snapshot){
@@ -80,11 +80,12 @@
 			}
 			ref.update({
 				rating: this.rating
-			});	
+			});
+			console.log("got to updateOverallScore")	
 			var updateOverallScore = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/ratings/");
 			updateOverallScore.push(stepDifference);
-
-			location.href = '/#/concerts/'+id;
+			console.log("reached refresh");
+			location.reload(true);
 		}
 
 	}
