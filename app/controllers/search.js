@@ -27,6 +27,7 @@ app.controller('searchconcertCtrl',
 	  			 }
   			});
 
+  		//hides a concert from view if already added to list of concerts
   		$scope.testConcert = function(conId){
   			for(var i = 0; i<concertIdList.length; i++){
   				if(conId === concertIdList[i]){
@@ -83,6 +84,32 @@ app.controller('searchconcertCtrl',
 				venueCity: venueObj.city,
 				venueCountry: venueObj.country
 			});
+			var userConcerts = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/concerts/");
+      	userConcerts.push(Id);
+
+	     	var userConcerts = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/concerts/");
+			var concertList = [];
+			var concertIdList = [];
+
+			//create a users friends list
+			userConcerts.on("value", function(snapshot){
+				var rawAddConcerts = snapshot.val();
+				snapshot.forEach(function(childSnapshot){
+					var childData = childSnapshot.val();
+					concertIdList.push(childData);
+
+				})
+				console.log(concertIdList)
+				for(var i=0; i<concertIdList.length; i++){
+
+				if(concertIdList[i] === id){
+					return false;
+				}
+				return true
+			}	
+			});
+
+
       }
 	}])
 

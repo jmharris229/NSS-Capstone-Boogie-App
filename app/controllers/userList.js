@@ -17,7 +17,6 @@ app.controller('userListCtrl',
 		});
 
 		this.isFriend = function(id){
-			console.log("running is friend")
 			for(var i=0; i<friendlist.length; i++){
 				if(friendlist[i] === id){
 					return true;

@@ -4,6 +4,8 @@
 		<li ng-repeat="concert in SavedconcertCtrl.userConcerts" ng-click="SavedconcertCtrl.gotoConcert(concert.$id)">
 			{{concert.concertName}}
 			{{concert.rating}}
-			<span ng-show="SavedConcertCtrl.authObj === concert.userId" ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
+			{{concert.userId}}
+			{{SavedconcertCtrl.authObj}}
+			<span ng-show="SavedconcertCtrl.me === concert.userId" ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
 		</li>
 	</ul>

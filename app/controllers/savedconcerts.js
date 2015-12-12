@@ -4,8 +4,10 @@ app.controller('savedconcertsCtrl',
 	'$routeParams',
 	function(fireAuth, $firebaseArray,$routeParams){
 		var you = $routeParams.id
+		var me = fireAuth.getAuth();
 
-		this.authObj = you.uid;
+		this.authObj = you;
+		this.me = me.uid;
 		//saved concerts
 		var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
 				.orderByChild("userId")
