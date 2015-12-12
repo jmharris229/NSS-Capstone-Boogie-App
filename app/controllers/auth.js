@@ -25,7 +25,7 @@ app.controller('authCtrl',
 			  	} else {
 			   	fbid = authData.uid;
 			   	var newUserRef = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid);
-					newUserRef.set({
+					newUserRef.push({
 						name: authData.facebook.cachedUserProfile.first_name,
 						gender: authData.facebook.cachedUserProfile.gender,
 						pic: authData.facebook.cachedUserProfile.picture.data.url,

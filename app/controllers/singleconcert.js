@@ -10,6 +10,7 @@
 		var you = fireAuth.getAuth();
 		//creates reference to particular concert
 		this.Id= $routeParams.id;
+		var rateId = $routeParams.id;
 		var ref = new Firebase("https://boogie.firebaseio.com/concerts/"+this.Id);
 
 		//creates a snapshot of this concert so that the concert id can be taken
@@ -79,7 +80,10 @@
 			}
 			ref.update({
 				rating: this.rating
-			});
+			});	
+			var updateOverallScore = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/ratings/");
+			updateOverallScore.push(stepDifference);
+
 			location.href = '/#/concerts/'+id;
 		}
 
