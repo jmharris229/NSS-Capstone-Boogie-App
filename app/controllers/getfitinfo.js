@@ -8,9 +8,9 @@ app.controller('getfitbitdataCtrl',
 		var you = fireAuth.getAuth();
 		this.fitbitrequest = function(){
 			$location.path("/profile/"+you.uid);
-		}
+		};
 		this.logout = function(){
 			boogieref.unauth();
-			$location.path('/#/')
-		}
+			$location.path('/#/');
+		};
 	}]);

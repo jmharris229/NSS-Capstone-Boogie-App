@@ -16,7 +16,7 @@ app.controller('authCtrl',
 			} else {
 				console.log("User has logged out");
 			}
-		})
+		});
 
 		$scope.fbLogin = function(){
 			Authref.authWithOAuthPopup("facebook", function(error, authData) {
@@ -38,7 +38,7 @@ app.controller('authCtrl',
 
 		$scope.createUser = function(){
 			var boogieUsers = new Firebase("https://boogie.firebaseio.com/users/");
-			console.log($scope.email, $scope.password)
+			console.log($scope.email, $scope.password);
 			boogieUsers.createUser({
 				email: $('#email').val(),
 				password: $('#pass').val()

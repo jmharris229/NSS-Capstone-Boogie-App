@@ -14,68 +14,73 @@ app.controller('searchconcertCtrl',
 		var concertListKeys = [];
 		var concertIdList = [];
 		var searchResults;
-		$scope.added;
+		$scope.ad;
   		savedConcerts.orderByChild("userId").equalTo(you.uid).once("value", 
   			function(snapshot){
-	  			 var rawConcerts = snapshot.val();
-	  			 for(key in rawConcerts){
-	  			 	concertListKeys.push(key);
-	  			 }
-	  			 for(var i= 0; i<concertListKeys.length;i++){
-	  			 	var concert = new Firebase("https://boogie.firebaseio.com/concerts/"+concertListKeys[i]);
-	  			 	concert.on("value", function(snapshot){
-	  			 		concertIdList.push(snapshot.val().concertId);
-
-	  			 	})
-	  			 }
+	  			 // var rawConcerts = snapshot.val();
+	  			 snapshot.forEach(function(snapshot){
+	  			 	concertIdList.push({id: snapshot.val().concertId, name: snapshot.val().bandName.toLowerCase(), saved:snapshot.val().saveState});
+	  			 })
   			});
-
-  //	hides a concert from view if already added to list of concerts
-  		$scope.testConcert = function(conId){
-
-
-
-
-
-  			// console.log(searchResults)
-  			// for(var i = 0; i<searchResults.length; i++){
-  			// 	console.log(conId, searchResults[i]);
-  			// 	if(conId === searchResults[i].id){
-  			// 		console.log("false")
-  			// 		return false;
-  			// 	}
-  			// 	console.log("True")
-  			// 	return true
-  			// }
-  		}
 
       //user generated search
       $scope.searchBand = function(){
-      	var bandname = $('#searchBandBar').val();
+      	var bandname = $('#searchBandBar').val().toLowerCase();
       	bitreq.getResultsSearch(bandname)
       		.then(
       			function(concertData){
       				if(concertData.length === 0){
       					$scope.concerts = concertData;
+      					$scope.message = "no concerts found";
+      				}else{		
+	      				var conSearchArray = [];
+	      				$scope.message = "";
+	      				for(var i=0; i<concertIdList.length;i++){
+	      					if(concertIdList[i].name === bandname){
+	      						conSearchArray.push(concertIdList[i].id);
+	      					}
+	      				}
+	      				var filteredArray = [];
+	      				for(var i = 0; i<conSearchArray.length;i++){
+	      					console.log(conSearchArray[i]);
+	      					for(var j=0; j<concertData.length;j++){
+	      						if(conSearchArray[i] !== concertData[j].id){
+	      							console.log(filteredArray.length)
+	      							if(filteredArray.length === 0){
+	      								filteredArray.push(concertData[j]);								
+	      							}else{
+	      								for(var k=0;k<filteredArray.length;k++){
+		      								if(filteredArray[k].id !== concertData[j].id){
+		      									filteredArray.push(concertData[j]);	
+		      								}			
+	      								}
+	      							}
+	      							console.log(conSearchArray[i], concertData[j].id);
+	      						}else{
+	      							console.log("match", conSearchArray[i], concertData[j].id)
+	      						}
+	      					}
+	      				}
+	      				$scope.concertsArray = filteredArray;
+	      				console.log($scope.concertsArray);
 
-      					$scope.message = "no concerts found"
-      				}else{					
-	      				$scope.concerts = concertData;
-	      				 $scope.message = ""
-	      				 searchResults = concertData;
-      					console.log(concertData);
-	      				// $route.reload();
-      				}
+
+						};
+	      				// var combined = _.uniq(concertData.concat(concertIdList), 'id');
+	      				// console.log(combined)
+
+
+      				
       			},
       			function(error){
       				console.log(error);
       			});
-      	}
+      	};
 
       	//go to a single concert detail
       	$scope.goToConcert = function(songId){
       		$location.path('/concerts/'+songId);
-      	}
+      	};
 
 
       //saves a concert to users profile
@@ -125,6 +130,6 @@ app.controller('searchconcertCtrl',
 			// });
 
 
-      }
-	}])
+      };
+	}]);
 

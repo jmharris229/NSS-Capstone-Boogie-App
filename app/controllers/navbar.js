@@ -9,11 +9,11 @@ app.controller('navCtrl',
 
 		$scope.profile = function(){
 			location.href = '/#/profile/'+yourself.uid;
-		}
+		};
 		$scope.logout = function(){
 			fireAuth.unauth();
-			$location.path('/#/')
-		}
+			$location.path('/#/');
+		};
 	}
 	]
 );

@@ -25,12 +25,12 @@
   				snapshot.forEach(function (concert) {
 
   					var attendeeRef = new Firebase("https://boogie.firebaseio.com/users/"+concert.val().userId);
-  					attendeeRef.update({concertSteps: concert.val().difference})
+  					attendeeRef.update({concertSteps: concert.val().difference});
   					attendeeRef.once("value", function(snapshot){
 						var userInfo = snapshot.val();
 						this.attendees.push(userInfo);
 		  				$scope.$digest();
-					}.bind(this))
+					}.bind(this));
   				}.bind(this));
   			}.bind(this),function(errorObject){
   			});
@@ -49,7 +49,7 @@
 				startSteps: initialSteps
 			});
 
-		}
+		};
 
 		//gets steps after concert
 		this.stopCount = function(){
@@ -60,7 +60,7 @@
 				difference: stepDifference
 			});
 			calcRating(stepDifference, this.Id);
-		}
+		};
 
 		function calcRating(stepDifference, id){
 			if(stepDifference<2000){
@@ -81,7 +81,7 @@
 			ref.update({
 				rating: this.rating
 			});
-			console.log("got to updateOverallScore")	
+			console.log("got to updateOverallScore");
 			var updateOverallScore = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/ratings/");
 			updateOverallScore.push(stepDifference);
 			console.log("reached refresh");
@@ -89,4 +89,4 @@
 		}
 
 	}
-])
+]);

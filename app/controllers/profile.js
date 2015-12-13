@@ -16,19 +16,18 @@ app.controller('profileCtrl',
 		//snapshot for overall rating
 		var userInfoRatings = new Firebase("https://boogie.firebaseio.com/users/"+id+"/ratings/");
 		var averageRatingsArray = [];
-		this.average;
+		this.avg;
 		userInfoRatings.once("value", function(snapshot){
 			snapshot.forEach(function(childSnapshot){
 				var childData = childSnapshot.val();
 				averageRatingsArray.push(childData);
-			})
+			});
 			var total =0;
 			console.log(total);
 			for(var i=0;i<averageRatingsArray.length;i++){
 				total += averageRatingsArray[i];
 			}
-			this.average = total/averageRatingsArray.length;
-			console.log(this.average);
+			this.avg = total/averageRatingsArray.length;
 		}.bind(this));
 
 	}]);

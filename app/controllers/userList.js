@@ -11,7 +11,7 @@ app.controller('userListCtrl',
 		//create a users friends list
 		userfriends.on("value", function(snapshot){
 			var rawfriends = snapshot.val();
-			for(key in rawfriends){
+			for(var key in rawfriends){
 				friendlist.push(key);
 			}
 		});
@@ -21,9 +21,9 @@ app.controller('userListCtrl',
 				if(friendlist[i] === id){
 					return true;
 				}
-				return false
+				return false;
 			}
-		}
+		};
 
 
 		this.addFriend = function(Id, name, pic){
@@ -34,13 +34,13 @@ app.controller('userListCtrl',
 				pic:pic, 
 				savedState: true
 			});
-		}
+		};
 
 		this.hideYou = function(id){
 			if(id === you.uid){
-				return false
+				return false;
 			}
-			return true
-		}
+			return true;
+		};
 	}
-	])
+	]);

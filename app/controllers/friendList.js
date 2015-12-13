@@ -12,5 +12,5 @@ app.controller('friendlistCtrl',
 
 		this.gotoUser = function(id){
 			location.href='/#/profile/'+id;
-		}
-	}])
+		};
+	}]);

@@ -32,5 +32,5 @@ app.service("bitreq", function ($http, $q) {
                 // promise is returned
                 return deferred.promise;
             });
-    }
+    };
 });
