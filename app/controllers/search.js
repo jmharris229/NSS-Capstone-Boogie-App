@@ -41,27 +41,31 @@ app.controller('searchconcertCtrl',
 	      					}
 	      				}
 	      				var filteredArray = [];
-	      				for(var i = 0; i<conSearchArray.length;i++){
-	      					console.log(conSearchArray[i]);
+	      				for(var i = 0; i<1;i++){
+	      					console.log(conSearchArray[0]);
 	      					for(var j=0; j<concertData.length;j++){
-	      						if(conSearchArray[i] !== concertData[j].id){
-	      							console.log(filteredArray.length)
-	      							if(filteredArray.length === 0){
-	      								filteredArray.push(concertData[j]);								
-	      							}else{
-	      								for(var k=0;k<filteredArray.length;k++){
-		      								if(filteredArray[k].id !== concertData[j].id){
-		      									filteredArray.push(concertData[j]);	
-		      								}			
-	      								}
-	      							}
-	      							console.log(conSearchArray[i], concertData[j].id);
+	      						if(conSearchArray[0] !== concertData[j].id){
+	      								filteredArray.push(concertData[j]);										
 	      						}else{
-	      							console.log("match", conSearchArray[i], concertData[j].id)
+	      							console.log("match", conSearchArray[0], concertData[j].id)
 	      						}
 	      					}
 	      				}
-	      				$scope.concertsArray = filteredArray;
+	      				var secondfilter = [];
+	      				if(conSearchArray.length>1){
+		      				for(var i=0;i<1;i++){
+		      					for(var j=0;j<filteredArray.length; j++){
+		      						if(conSearchArray[1] !== filteredArray[j].id){
+		      								secondfilter.push(filteredArray[j]);										
+		      						}else{
+		      							console.log("match", conSearchArray[0], filteredArray[j].id)
+		      						}
+		      					}
+		      				}
+	      				$scope.concertsArray = secondfilter;	
+	      				}else{
+	      					$scope.concertsArray = filteredArray;	
+	      				}
 	      				console.log($scope.concertsArray);
 
 
