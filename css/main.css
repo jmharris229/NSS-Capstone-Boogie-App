@@ -26,12 +26,26 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
   color: #fff; }
 
+#appLogo {
+  width: 100%;
+  height: auto; }
+
+.navbar {
+  background-color: #29232C; }
+
+.glyphicon-cog {
+  color: white; }
+
+.navLogo {
+  width: auto;
+  height: 49px; }
+
+.logoCent {
+  text-align: center; }
+
 #loginContainer {
   width: 95%;
   border: 1px solid black; }
-  #loginContainer #appLogo {
-    width: 100%;
-    height: auto; }
   #loginContainer .loginIcons {
     width: 40px;
     height: auto; }
