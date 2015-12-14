@@ -80,4 +80,26 @@ input:-ms-input-placeholder {
     #loginContainer .facebookBox .FBBold {
       font-weight: bold; }
 
+#addDevicePage {
+  text-align: center;
+  background-color: #413544;
+  color: white;
+  height: 100vh; }
+  #addDevicePage h3 {
+    display: inline-block;
+    border-bottom: 2px solid white; }
+  #addDevicePage #addDeviceButton {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 10px 0;
+    font-size: 1.7em;
+    letter-spacing: 3px;
+    font-weight: bold;
+    width: 80%;
+    display: inline-block; }
+
 /*# sourceMappingURL=main.css.map */

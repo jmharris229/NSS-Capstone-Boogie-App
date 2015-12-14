@@ -23,6 +23,21 @@ input:-moz-placeholder { color:#fff ;}
 input::-moz-placeholder {color:#fff ;}
 input:-ms-input-placeholder {color:#fff ;}
 
+
+//button styles
+@mixin buttonStyles{
+		background-color: transparent;
+		color: white;
+		border: 2px solid white;
+		display: block;
+		width: 100%;
+		outline: none;
+		padding: 10px 0;
+		font-size: 1.7em;
+		letter-spacing: 3px;
+		font-weight: bold;
+}
+
 //login page
 #loginContainer{
 	width:95%;
@@ -63,16 +78,7 @@ input:-ms-input-placeholder {color:#fff ;}
 
 	}
 	#loginButton{
-		background-color: transparent;
-		color: white;
-		border: 2px solid white;
-		display: block;
-		width: 100%;
-		outline: none;
-		padding: 10px 0;
-		font-size: 1.7em;
-		letter-spacing: 3px;
-		font-weight: bold;
+		@include buttonStyles;
 	}
 	.facebookBox{
 		width: 100%;
@@ -92,6 +98,23 @@ input:-ms-input-placeholder {color:#fff ;}
 		.FBBold{
 			font-weight: bold;
 		}
+	}
+}
+
+//add device section
+#addDevicePage{
+	text-align:center;
+	background-color: #413544;
+	color: white;
+	height:100vh;
+	h3{
+		display: inline-block;
+		border-bottom: 2px solid white;
+	}
+	#addDeviceButton{
+		@include buttonStyles;
+		width: 80%;
+		display: inline-block;
 	}
 }
 
