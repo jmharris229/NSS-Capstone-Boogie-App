@@ -43,6 +43,9 @@ input:-ms-input-placeholder {
 .logoCent {
   text-align: center; }
 
+.placeholderNav {
+  margin-bottom: 0; }
+
 #loginContainer {
   width: 95%;
   border: 1px solid black; }
@@ -115,5 +118,23 @@ input:-ms-input-placeholder {
     font-weight: bold;
     width: 80%;
     display: inline-block; }
+
+#profilePage {
+  text-align: center;
+  background-color: #413544;
+  color: white;
+  height: 100vh; }
+  #profilePage .profileImg {
+    border-radius: 100%;
+    margin-top: 15px; }
+  #profilePage h1 {
+    border-bottom: 1px solid white;
+    margin-bottom: 40px;
+    padding: 30px 0; }
+  #profilePage .profileIcons {
+    width: auto;
+    height: 75px; }
+  #profilePage p {
+    padding-top: 10px; }
 
 /*# sourceMappingURL=main.css.map */

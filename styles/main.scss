@@ -1,3 +1,5 @@
+$background-color: #413544;
+
 body{
 	margin: 0;
 	padding:0;
@@ -43,6 +45,15 @@ input:-ms-input-placeholder {color:#fff ;}
 		font-weight: bold;
 }
 
+@mixin basicPage{
+	text-align:center;
+	background-color: $background-color;
+	color: white;
+	height:100vh;
+}
+@mixin roundedImg{
+	border-radius: 100%;
+}
 
 // navbar
 .navbar{
@@ -59,6 +70,9 @@ input:-ms-input-placeholder {color:#fff ;}
 }
 .logoCent{
 	text-align:center;
+}
+.placeholderNav{
+	margin-bottom:0;
 }
 
 
@@ -128,10 +142,7 @@ input:-ms-input-placeholder {color:#fff ;}
 
 //add device section
 #addDevicePage{
-	text-align:center;
-	background-color: #413544;
-	color: white;
-	height:100vh;
+	@include basicPage;
 	h3{
 		display: inline-block;
 		border-bottom: 2px solid white;
@@ -144,7 +155,25 @@ input:-ms-input-placeholder {color:#fff ;}
 }
 
 //profile section
-
+#profilePage{
+	@include basicPage;
+	.profileImg{
+		@include roundedImg;
+		margin-top:15px;
+	}
+	h1{
+		border-bottom: 1px solid white;
+		margin-bottom: 40px;
+		padding: 30px 0;
+	}
+	.profileIcons{
+		width:auto;
+		height:75px;
+	}
+	p{
+		padding-top: 10px;
+	}
+}
 
 
 
