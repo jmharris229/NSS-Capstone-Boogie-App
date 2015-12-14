@@ -13,4 +13,71 @@ input {
   padding: 0;
   margin: 0; }
 
+input::-webkit-input-placeholder {
+  color: #fff !important;
+  opacity: 1 !important; }
+
+input:-moz-placeholder {
+  color: #fff; }
+
+input::-moz-placeholder {
+  color: #fff; }
+
+input:-ms-input-placeholder {
+  color: #fff; }
+
+#loginContainer {
+  width: 95%;
+  border: 1px solid black; }
+  #loginContainer #appLogo {
+    width: 100%;
+    height: auto; }
+  #loginContainer .loginIcons {
+    width: 40px;
+    height: auto; }
+  #loginContainer .input-group {
+    margin: 10px 0; }
+  #loginContainer .input-group-addon {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    padding: 7px 0; }
+  #loginContainer .form-control {
+    background-color: transparent;
+    padding-left: 5px;
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    letter-spacing: 3px;
+    height: 57px;
+    border-radius: 0; }
+  #loginContainer #loginButton {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 10px 0;
+    font-size: 1.7em;
+    letter-spacing: 3px;
+    font-weight: bold; }
+  #loginContainer .facebookBox {
+    width: 100%;
+    margin-top: 10px; }
+    #loginContainer .facebookBox p {
+      display: inline-block;
+      letter-spacing: 0;
+      color: white;
+      text-align: left;
+      width: 48%; }
+    #loginContainer .facebookBox p:first-of-type {
+      text-align: right;
+      border-right: 2px solid white;
+      padding-right: 7px; }
+    #loginContainer .facebookBox .FBBold {
+      font-weight: bold; }
+
 /*# sourceMappingURL=main.css.map */
