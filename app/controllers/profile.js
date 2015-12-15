@@ -6,6 +6,8 @@ app.controller('profileCtrl',
 	'$location',
 	function($firebaseArray, object, fireAuth, $routeParams, $location){
 
+		//change body to purple
+		$('body').css('background-image', 'none');
 		//get personal info
 		var id = $routeParams.id;
 		//reference to user info

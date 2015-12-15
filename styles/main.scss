@@ -1,15 +1,32 @@
 $background-color: #413544;
 
-body{
+body,h1{
 	margin: 0;
 	padding:0;
+}
+
+body{
 	background-image: url('./images/background_image.svg');
+	background-color: $background-color;
 	background-size: cover;
 	font-family: 'Open Sans', sans-serif;
 	letter-spacing: 3px;
+	// width:100vh;
+	// height:100vh;
+	color: white;
 }
 
+h1{
+	border-bottom: 2px solid white;
+	margin-bottom: 40px;
+	padding: 30px 0;
+	display: inline-block;
+}
 
+ul{
+	list-style:none;
+	padding-left: 0;
+}
 
 //basic elements
 input{
@@ -18,6 +35,7 @@ input{
 	border: none;
 	padding: 0;
 	margin: 0;
+	border-bottom:2px solid white;
 }
 //changes placeholder text color
 input::-webkit-input-placeholder { color:#fff !important; opacity: 1 !important; }
@@ -27,7 +45,7 @@ input:-ms-input-placeholder {color:#fff ;}
 
 //logo styling
 #appLogo{
-	width:100%;
+	width:70%;
 	height: auto;
 	}
 
@@ -47,12 +65,18 @@ input:-ms-input-placeholder {color:#fff ;}
 
 @mixin basicPage{
 	text-align:center;
-	background-color: $background-color;
 	color: white;
-	height:100vh;
 }
 @mixin roundedImg{
 	border-radius: 100%;
+}
+
+@mixin pageHeader{
+	background-color: $background-color;
+	position: fixed;
+	display: block;
+	text-align: center;
+	width:100%;
 }
 
 // navbar
@@ -60,8 +84,6 @@ input:-ms-input-placeholder {color:#fff ;}
 	background-color: #29232C;
 }
 .glyphicon-cog{
-	// position:absolute;
-	// left:0;
 	color: white;
 }
 .navLogo{
@@ -75,17 +97,15 @@ input:-ms-input-placeholder {color:#fff ;}
 	margin-bottom:0;
 }
 
-
-
-
-
-
-
 //login page
 #loginContainer{
-	width:95%;
+	width:70%;
+	text-align:center;
 	border:1px solid black;
-	
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
 	//login icons size
 	.loginIcons{
 		width: 40px;
@@ -116,7 +136,7 @@ input:-ms-input-placeholder {color:#fff ;}
 		border-radius: 0;
 
 	}
-	#loginButton{
+	.loginButton{
 		@include buttonStyles;
 	}
 	.facebookBox{
@@ -161,17 +181,69 @@ input:-ms-input-placeholder {color:#fff ;}
 		@include roundedImg;
 		margin-top:15px;
 	}
-	h1{
-		border-bottom: 1px solid white;
-		margin-bottom: 40px;
-		padding: 30px 0;
-	}
 	.profileIcons{
 		width:auto;
 		height:75px;
 	}
 	p{
 		padding-top: 10px;
+	}
+}
+
+//saved concert section
+#savedConcerts{
+	width:100%;
+	div{
+		display: block;
+		text-align: center;
+	}
+	.fixedHeader{
+		@include pageHeader;
+	}
+	ul .singleConcert{
+		border-bottom: 2px solid white;
+		padding-bottom: 20px;
+	}
+}
+.concertDets{
+		display: inline-block;
+	}
+.concertDets:nth-of-type(2){
+	border-right: 2px solid white;
+	border-left: 2px solid white;
+	padding: 0 5px;
+}
+.bandName{
+	span{
+		float:right;
+		font-size: 10px;
+	}
+}
+
+//search concerts section
+#searchConcerts{
+	div{
+		display: block;
+		text-align: center;
+	}
+	.fixedHeader{
+		@include pageHeader;
+	}
+	ul .singleConcert{
+		border-bottom: 2px solid white;
+		padding-bottom: 20px;
+	}
+	ul .singleConcert p button{
+		float:right;
+		@include buttonStyles;
+		width: 50px;
+		height: 20px;
+		font-size: 14px;
+		padding:0;
+	}
+	.searchButton{
+		@include buttonStyles;
+		width: 75%;
 	}
 }
 

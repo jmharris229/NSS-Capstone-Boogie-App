@@ -1,9 +1,22 @@
 <section ng-include="'partials/navbar.html'"></section>
-<h1>placeholder</h1>
+<section id="savedConcerts">
+	<div class="fixedHeader">
+		<h1>Saved Concerts</h1>
+	</div>
+	<div>
+		<h1>Saved Concerts</h1>
+	</div>
 	<ul>
-		<li ng-repeat="concert in SavedconcertCtrl.userConcerts" ng-click="SavedconcertCtrl.gotoConcert(concert.$id)">
-			{{concert.concertName}}
-			{{concert.rating}}
-			<span ng-show="SavedconcertCtrl.me === concert.userId" ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
+		<li class="singleConcert" ng-repeat="concert in SavedconcertCtrl.userConcerts" ng-click="SavedconcertCtrl.gotoConcert(concert.$id)">
+			<h3 class="bandName">
+				{{concert.bandName}}
+				<span ng-show="SavedconcertCtrl.me === concert.userId" ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
+			</h3>
+			<ul>
+				<li class="concertDets">{{concert.venueName}}</li>
+				<li class="concertDets">{{concert.venueCity}}, {{concert.venueState}}</li>
+				<li class="concertDets">{{concert.concertDate}}</li>
+			</ul>
 		</li>
 	</ul>
+</section>

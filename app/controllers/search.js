@@ -9,9 +9,12 @@ app.controller('searchconcertCtrl',
 	'$location',
 	'$routeParams',
 	function($scope, $q, bitreq, fireAuth, Authref,$acctInfo,$route,$location,$routeParams){
+		
+		$('body').css('background-image', 'none');
 		var you = fireAuth.getAuth();
 		var savedConcerts = new Firebase("https://boogie.firebaseio.com/concerts/");
 		var concertListKeys = [];
+		//list of saved concerts
 		var concertIdList = [];
 		var searchResults;
 		$scope.ad;
@@ -32,7 +35,8 @@ app.controller('searchconcertCtrl',
       				if(concertData.length === 0){
       					$scope.concerts = concertData;
       					$scope.message = "no concerts found";
-      				}else{		
+      				}else{	
+      					//consearcharray = a list of saved ids	
 	      				var conSearchArray = [];
 	      				$scope.message = "";
 	      				for(var i=0; i<concertIdList.length;i++){
@@ -40,32 +44,27 @@ app.controller('searchconcertCtrl',
 	      						conSearchArray.push(concertIdList[i].id);
 	      					}
 	      				}
-	      				var filteredArray = [];
-	      				for(var i = 0; i<1;i++){
-	      					console.log(conSearchArray[0]);
-	      					for(var j=0; j<concertData.length;j++){
-	      						if(conSearchArray[0] !== concertData[j].id){
-	      								filteredArray.push(concertData[j]);										
-	      						}else{
-	      							console.log("match", conSearchArray[0], concertData[j].id)
+	      				console.log("consearcharray",conSearchArray)
+
+	      				var concertDataIds = [];
+	      				for(var j =0; j<concertData.length;j++){
+	      					concertDataIds.push(concertData[j].id);
+	      				}
+	      				console.log("concertids",concertDataIds);
+
+	      				var differenceArray = _.difference(concertDataIds, conSearchArray);
+	      				console.log(differenceArray);
+
+	      				var finalFilteredArray = [];
+	      				for(var j=0; j<differenceArray.length;j++){
+	      					for(var k=0; k<concertData.length;k++){
+	      						if(differenceArray[j] === concertData[k].id){
+	      							finalFilteredArray.push(concertData[k]);
 	      						}
 	      					}
 	      				}
-	      				var secondfilter = [];
-	      				if(conSearchArray.length>1){
-		      				for(var i=0;i<1;i++){
-		      					for(var j=0;j<filteredArray.length; j++){
-		      						if(conSearchArray[1] !== filteredArray[j].id){
-		      								secondfilter.push(filteredArray[j]);										
-		      						}else{
-		      							console.log("match", conSearchArray[0], filteredArray[j].id)
-		      						}
-		      					}
-		      				}
-	      				$scope.concertsArray = secondfilter;	
-	      				}else{
-	      					$scope.concertsArray = filteredArray;	
-	      				}
+	      				console.log(finalFilteredArray);
+	      				$scope.concertsArray = finalFilteredArray;
 	      				console.log($scope.concertsArray);
 
 

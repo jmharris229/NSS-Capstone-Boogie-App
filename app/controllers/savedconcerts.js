@@ -3,6 +3,8 @@ app.controller('savedconcertsCtrl',
 	'$firebaseArray',
 	'$routeParams',
 	function(fireAuth, $firebaseArray,$routeParams){
+		
+		$('body').css('background-image', 'none');
 		var you = $routeParams.id;
 		var me = fireAuth.getAuth();
 

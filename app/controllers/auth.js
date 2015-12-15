@@ -36,14 +36,14 @@ app.controller('authCtrl',
 			});
 		};
 
-		$scope.createUser = function(){
-			var boogieUsers = new Firebase("https://boogie.firebaseio.com/users/");
-			console.log($scope.email, $scope.password);
+		$scope.CreateUser = function(){
+			var boogieUsers = new Firebase("https://boogie.firebaseio.com");
+			console.log($scope.user);
 			boogieUsers.createUser({
-				email: $('#email').val(),
-				password: $('#pass').val()
-			}).then(function(userData){
-				var ref = new Firebase("https://boogie.firebaseio.com/users/"+userData.uid+"/userinfo");
+				email: $scope.user.email,
+				password: $scope.user.password
+			}).then(function(error, userData){
+				var ref = new Firebase("https://boogie.firebaseio.com/users/"+userData.uid);
 				ref.set({
 						name: "",
 						gender: "",

@@ -6,7 +6,6 @@
 	'$location',
 	'$scope',
 	function($firebaseObject,$firebaseArray, fireAuth, $routeParams, $location, $scope){
-
 		var you = fireAuth.getAuth();
 		//creates reference to particular concert
 		this.Id= $routeParams.id;
@@ -39,6 +38,10 @@
 
 		//concert object and array
 		this.concert = $firebaseObject(ref);
+
+		this.backToConcerts = function(){
+			location.href= "/#/concerts/"+you.uid;
+		}
 
 		//functionality for rating a concert
 		var initialSteps;

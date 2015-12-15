@@ -1,17 +1,32 @@
-body {
+body, h1 {
   margin: 0;
-  padding: 0;
+  padding: 0; }
+
+body {
   background-image: url("./images/background_image.svg");
+  background-color: #413544;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
-  letter-spacing: 3px; }
+  letter-spacing: 3px;
+  color: white; }
+
+h1 {
+  border-bottom: 2px solid white;
+  margin-bottom: 40px;
+  padding: 30px 0;
+  display: inline-block; }
+
+ul {
+  list-style: none;
+  padding-left: 0; }
 
 input {
   display: block;
   background-color: transparent;
   border: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  border-bottom: 2px solid white; }
 
 input::-webkit-input-placeholder {
   color: #fff !important;
@@ -27,7 +42,7 @@ input:-ms-input-placeholder {
   color: #fff; }
 
 #appLogo {
-  width: 100%;
+  width: 70%;
   height: auto; }
 
 .navbar {
@@ -47,8 +62,13 @@ input:-ms-input-placeholder {
   margin-bottom: 0; }
 
 #loginContainer {
-  width: 95%;
-  border: 1px solid black; }
+  width: 70%;
+  text-align: center;
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
   #loginContainer .loginIcons {
     width: 40px;
     height: auto; }
@@ -70,7 +90,7 @@ input:-ms-input-placeholder {
     letter-spacing: 3px;
     height: 57px;
     border-radius: 0; }
-  #loginContainer #loginButton {
+  #loginContainer .loginButton {
     background-color: transparent;
     color: white;
     border: 2px solid white;
@@ -99,9 +119,7 @@ input:-ms-input-placeholder {
 
 #addDevicePage {
   text-align: center;
-  background-color: #413544;
-  color: white;
-  height: 100vh; }
+  color: white; }
   #addDevicePage h3 {
     display: inline-block;
     border-bottom: 2px solid white; }
@@ -121,20 +139,82 @@ input:-ms-input-placeholder {
 
 #profilePage {
   text-align: center;
-  background-color: #413544;
-  color: white;
-  height: 100vh; }
+  color: white; }
   #profilePage .profileImg {
     border-radius: 100%;
     margin-top: 15px; }
-  #profilePage h1 {
-    border-bottom: 1px solid white;
-    margin-bottom: 40px;
-    padding: 30px 0; }
   #profilePage .profileIcons {
     width: auto;
     height: 75px; }
   #profilePage p {
     padding-top: 10px; }
+
+#savedConcerts {
+  width: 100%; }
+  #savedConcerts div {
+    display: block;
+    text-align: center; }
+  #savedConcerts .fixedHeader {
+    background-color: #413544;
+    position: fixed;
+    display: block;
+    text-align: center;
+    width: 100%; }
+  #savedConcerts ul .singleConcert {
+    border-bottom: 2px solid white;
+    padding-bottom: 20px; }
+
+.concertDets {
+  display: inline-block; }
+
+.concertDets:nth-of-type(2) {
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  padding: 0 5px; }
+
+.bandName span {
+  float: right;
+  font-size: 10px; }
+
+#searchConcerts div {
+  display: block;
+  text-align: center; }
+#searchConcerts .fixedHeader {
+  background-color: #413544;
+  position: fixed;
+  display: block;
+  text-align: center;
+  width: 100%; }
+#searchConcerts ul .singleConcert {
+  border-bottom: 2px solid white;
+  padding-bottom: 20px; }
+#searchConcerts ul .singleConcert p button {
+  float: right;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 10px 0;
+  font-size: 1.7em;
+  letter-spacing: 3px;
+  font-weight: bold;
+  width: 50px;
+  height: 20px;
+  font-size: 14px;
+  padding: 0; }
+#searchConcerts .searchButton {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 10px 0;
+  font-size: 1.7em;
+  letter-spacing: 3px;
+  font-weight: bold;
+  width: 75%; }
 
 /*# sourceMappingURL=main.css.map */

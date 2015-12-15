@@ -2,15 +2,15 @@
 	<img id="appLogo" src="../css/images/logo.png">
 	<div class="input-group">
   		<span class="input-group-addon" id="basic-addon1"><img class="loginIcons" src="../css/images/Profile_icon.png"></span>
-  		<input type="text" id="email" class="form-control" placeholder="username" aria-describedby="basic-addon1">
+  		<input type="text" id="email" ng-model="user.email" class="form-control" placeholder="username" aria-describedby="basic-addon1">
 	</div>
 	<div class="input-group">
   		<span class="input-group-addon" id="basic-addon1"><img class="loginIcons" src="../css/images/lock_icon.png"></span>
-  		<input type="password" id="password" class="form-control" placeholder="password" aria-describedby="basic-addon1">
+  		<input type="password" id="password" ng-model="user.password" class="form-control" placeholder="password" aria-describedby="basic-addon1">
 	</div>
-	<button class="#loginButton" ng-click="loginUser()">LOG IN</button>
+	<button class="loginButton" ng-click="loginUser()">LOG IN</button>
 	<div class="facebookBox">
 		<p ng-click="fbLogin()">Log in with <span class="FBBold">Facebook</span></p>	
-		<p ng-click="createUser()">Create an <span class="FBBold">Account</span></p>	
+		<p ng-click="CreateUser()">Create an <span class="FBBold">Account</span></p>	
 	</div>
 </div>
