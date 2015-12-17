@@ -293,6 +293,28 @@ input:-ms-input-placeholder {color:#fff ;}
 	}
 }
 
+//friend list
+.friendsPlaceholder{
+	@include pageHeader;
+	text-align:center;
+}
+#friendsList{
+	padding: 0 3%;
+	li{
+		padding-bottom: 10px;
+		border-bottom: 2px solid white;
+		img{
+			border-radius: 100%;
+			width: 50px;
+		}
+		a{
+			color: white;
+		}
+		a:hover{
+			text-decoration: none;
+		}
+	}
+}
 
 
 

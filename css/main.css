@@ -270,4 +270,25 @@ input:-ms-input-placeholder {
       .userList li div a:hover {
         text-decoration: none; }
 
+.friendsPlaceholder {
+  background-color: #413544;
+  position: fixed;
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-align: center; }
+
+#friendsList {
+  padding: 0 3%; }
+  #friendsList li {
+    padding-bottom: 10px;
+    border-bottom: 2px solid white; }
+    #friendsList li img {
+      border-radius: 100%;
+      width: 50px; }
+    #friendsList li a {
+      color: white; }
+    #friendsList li a:hover {
+      text-decoration: none; }
+
 /*# sourceMappingURL=main.css.map */
