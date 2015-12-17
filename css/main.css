@@ -217,4 +217,57 @@ input:-ms-input-placeholder {
   font-weight: bold;
   width: 75%; }
 
+.userSearchBar {
+  padding-top: 1.5em;
+  text-align: left;
+  padding: 1.5em 3%; }
+
+.usersPlaceholder {
+  background-color: #413544;
+  position: fixed;
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-align: left; }
+
+.userSearch {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 10px 0;
+  font-size: 1.7em;
+  letter-spacing: 3px;
+  font-weight: bold;
+  background-color: white;
+  color: #413544;
+  width: auto;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1em;
+  border: none; }
+
+.findFriendInput {
+  display: inline-block; }
+
+.userList {
+  padding: 0 3%;
+  margin-top: 20px; }
+  .userList li {
+    padding-bottom: 10px;
+    border-bottom: 2px solid white; }
+    .userList li img {
+      border-radius: 100%;
+      width: 50px; }
+    .userList li div {
+      display: inline-block; }
+      .userList li div button {
+        float: right; }
+      .userList li div a {
+        color: white; }
+      .userList li div a:hover {
+        text-decoration: none; }
+
 /*# sourceMappingURL=main.css.map */

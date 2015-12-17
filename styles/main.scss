@@ -11,8 +11,6 @@ body{
 	background-size: cover;
 	font-family: 'Open Sans', sans-serif;
 	letter-spacing: 3px;
-	// width:100vh;
-	// height:100vh;
 	color: white;
 }
 
@@ -247,6 +245,53 @@ input:-ms-input-placeholder {color:#fff ;}
 	}
 }
 
+//user list section
+.userSearchBar{
+	padding-top: 1.5em;
+	text-align:left;
+	padding: 1.5em 3%;
+}
+.usersPlaceholder{
+	@include pageHeader;
+	text-align:left;
+}
+.userSearch{
+	@include buttonStyles;
+	background-color:white;
+	color: $background-color;
+	width: auto;
+	display: inline-block;
+	padding:0 10px;
+	font-size: 1em;
+	border: none;
+}
+.findFriendInput{
+		display: inline-block;
+	}
+.userList{
+	padding: 0 3%;
+	margin-top:20px;
+	li{
+		padding-bottom: 10px;
+		border-bottom: 2px solid white;
+		img{
+			border-radius: 100%;
+			width: 50px;
+		}
+		div{
+			display: inline-block;
+			button{
+				float: right;
+			}
+			a{
+				color:white;
+			}
+			a:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
 
 
 

@@ -9,7 +9,7 @@
 	<ul>
 		<li class="singleConcert" ng-repeat="concert in SavedconcertCtrl.userConcerts" ng-click="SavedconcertCtrl.gotoConcert(concert.$id)">
 			<h3 class="bandName">
-				{{concert.bandName}}
+				{{concert.bandName}} | {{concert.rating}}
 				<span ng-show="SavedconcertCtrl.me === concert.userId" ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
 			</h3>
 			<ul>

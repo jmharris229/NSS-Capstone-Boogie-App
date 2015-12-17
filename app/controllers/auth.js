@@ -5,6 +5,8 @@ app.controller('authCtrl',
 	'$location',
 	'$firebaseAuth',
 	function($scope,Authref, $currentAcct, $location, $firebaseAuth){
+		
+		$('body').css('background-image', '../css/images/background_image.svg');
 		//login a user using facebook
 		var fbid;
 

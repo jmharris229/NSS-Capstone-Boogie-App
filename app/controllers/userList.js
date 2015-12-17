@@ -2,6 +2,8 @@ app.controller('userListCtrl',
 	['$firebaseArray',
 	'fireAuth',
 	function(userList, fireAuth){
+
+		$('body').css('background-image', 'none');
 		var ref = new Firebase("https://boogie.firebaseio.com/users/");
 		this.users = userList(ref);
 		var you = fireAuth.getAuth();
