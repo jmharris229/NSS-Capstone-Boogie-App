@@ -6,8 +6,10 @@
 	'$location',
 	'$scope',
 	function($firebaseObject,$firebaseArray, fireAuth, $routeParams, $location, $scope){
+		
+		$('body').css('background-image', 'none');
 		var you = fireAuth.getAuth();
-		//creates reference to particular concert
+	//creates reference to particular concert
 		this.Id= $routeParams.id;
 		var rateId = $routeParams.id;
 		var ref = new Firebase("https://boogie.firebaseio.com/concerts/"+this.Id);

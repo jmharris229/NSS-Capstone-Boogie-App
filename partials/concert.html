@@ -1,22 +1,43 @@
 <section ng-include="'partials/navbar.html'"></section>
-
-<button ng-click="ConcertCtrl.backToConcerts()">go back</button>
-<h1>{{ConcertCtrl.concert.bandName}}</h1>
-<h3>{{ConcertCtrl.concert.concertDate}}</h3>
-<h3>{{ConcertCtrl.concert.concertName}}</h3>
-<h3>{{ConcertCtrl.concert.concertId}}</h3>
-<h5>At {{ConcertCtrl.concert.venueName}} in {{ConcertCtrl.concert.venueCity}}, {{ConcertCtrl.concert.venueState}}</h5>
-<button ng-hide="ConcertCtrl.concert.startSteps !== 0" ng-click="ConcertCtrl.startCount()">Start</button>
-<button ng-hide="ConcertCtrl.concert.endSteps !== 0" ng-click="ConcertCtrl.stopCount()">Stop</button>
-<p>{{ConcertCtrl.concert.rating}}</p>
-<section>
+<div class="singleConcertPlaceholder">
+	<h1>TIME TO DANCE</h1>
+</div>
+<div>	
+	<h1>TIME TO DANCE</h1>
+</div>
+<!-- <button ng-click="ConcertCtrl.backToConcerts()">go back</button> -->
+<section class="singleConcertInfo">
+	<h3>{{ConcertCtrl.concert.bandName}}</h3>
+	<ul>
+		<li>
+			{{ConcertCtrl.concert.venueName}}
+		</li>
+		<li>
+			{{ConcertCtrl.concert.venueCity}}, {{ConcertCtrl.concert.venueState}}
+		</li>
+		<li>
+			{{ConcertCtrl.concert.concertDate}}
+		</li>
+	</ul>
+	<div class="singleConcertButtonDiv">	
+		<p ng-hide="ConcertCtrl.concert.difference === 0">{{ConcertCtrl.concert.rating}}</p>
+		<button class="singleConcertButton" ng-hide="ConcertCtrl.concert.startSteps !== 0" ng-click="ConcertCtrl.startCount()">START</button>
+		<button class="singleConcertButton" ng-hide="ConcertCtrl.concert.endSteps !== 0" ng-click="ConcertCtrl.stopCount()">STOP</button>
+	</div>
+</section>
+<section class="singleLeaderBoard">
+	<h3>LEADER BOARD</h3>
 	<ul>
 		<li ng-repeat="item in ConcertCtrl.attendees | orderBy: '-concertSteps' : reverse">
 			<img src="{{item.pic}}">
+			<div>
 			{{item.name}}
-			{{item.concertSteps}}
+			<span>Boogie Score: {{item.concertSteps}}</span>
+			</div>	
 		</li>
 	</ul>
 </section>
+
+
 
 

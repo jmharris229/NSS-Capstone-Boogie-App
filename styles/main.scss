@@ -316,6 +316,60 @@ input:-ms-input-placeholder {color:#fff ;}
 	}
 }
 
+//single concert page
+.singleConcertPlaceholder{
+	@include pageHeader;
+	text-align:center;	
+}
+.singleConcertInfo{
+	text-align:center;
+	ul{
+		li{
+			display: inline-block;
+		}
+	}
+}
+.singleConcertButtonDiv{
+	width:90%;
+	margin:0 auto;
+	padding: 20px;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+}
+.singleConcertButton{
+	@include buttonStyles;
+	width: 90%;
+	margin: 0 auto;
+	text-align:center;
+}
+.singleConcertButton:first-of-type{
+	margin-bottom:20px;
+}
+.singleLeaderBoard{
+	margin-top: 20px;
+	h3{
+		text-align: center;
+	}
+	ul{
+		padding: 0 3%;
+		li{
+			padding-bottom: 10px;
+			border-bottom: 2px solid white;
+			img{
+				border-radius: 100%;
+				width: 50px;
+			}
+			div{
+				display: inline-block;
+				span{
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+
 
 
 

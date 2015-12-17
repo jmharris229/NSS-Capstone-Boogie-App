@@ -291,4 +291,59 @@ input:-ms-input-placeholder {
     #friendsList li a:hover {
       text-decoration: none; }
 
+.singleConcertPlaceholder {
+  background-color: #413544;
+  position: fixed;
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-align: center; }
+
+.singleConcertInfo {
+  text-align: center; }
+  .singleConcertInfo ul li {
+    display: inline-block; }
+
+.singleConcertButtonDiv {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white; }
+
+.singleConcertButton {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 10px 0;
+  font-size: 1.7em;
+  letter-spacing: 3px;
+  font-weight: bold;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+
+.singleConcertButton:first-of-type {
+  margin-bottom: 20px; }
+
+.singleLeaderBoard {
+  margin-top: 20px; }
+  .singleLeaderBoard h3 {
+    text-align: center; }
+  .singleLeaderBoard ul {
+    padding: 0 3%; }
+    .singleLeaderBoard ul li {
+      padding-bottom: 10px;
+      border-bottom: 2px solid white; }
+      .singleLeaderBoard ul li img {
+        border-radius: 100%;
+        width: 50px; }
+      .singleLeaderBoard ul li div {
+        display: inline-block; }
+        .singleLeaderBoard ul li div span {
+          float: right; }
+
 /*# sourceMappingURL=main.css.map */
