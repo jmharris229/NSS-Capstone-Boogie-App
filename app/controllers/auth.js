@@ -7,7 +7,7 @@ app.controller('authCtrl',
 	function($scope,Authref, $currentAcct, $location, $firebaseAuth){
 		
 		//sets the background image for the login screen
-		$('body').css('background-image', 'url('+'../css/images/background_image.svg'+')');
+		$('body').css('background-image', 'url(../css/images/background_image.svg)');
 		
 		//login a user using facebook
 		var fbid;

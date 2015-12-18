@@ -3,15 +3,17 @@ body, h1 {
   padding: 0; }
 
 body {
-  background-image: url("../css/images/background_image.svg");
   background-color: #413544;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 3px;
-  color: white; }
+  color: white;
+  width: 750px;
+  height: 1334px;
+  font-size: 3em;
+  margin: 0 auto; }
 
 h1 {
-  border-bottom: 2px solid white;
   margin-bottom: 40px;
   padding: 30px 0;
   display: inline-block; }
@@ -26,6 +28,7 @@ input {
   border: none;
   padding: 0;
   margin: 0;
+  font-size: 1em;
   border-bottom: 2px solid white; }
 
 input[placeholder] {
@@ -50,20 +53,61 @@ input:-ms-input-placeholder {
   margin-bottom: 10px; }
 
 .navbar {
-  background-color: #29232C; }
+  background-color: #29232C;
+  height: auto; }
 
-.glyphicon-cog {
-  color: white; }
+.navCog {
+  text-align: center;
+  height: 154px;
+  line-height: 154px; }
+
+.navHam {
+  text-align: center;
+  height: 154px;
+  line-height: 154px; }
+
+.navHamStyle {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 1.1em; }
+
+.navHamStyle:active {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 1.1em; }
+
+ul li {
+  line-height: normal;
+  font-size: 2em; }
+  ul li a {
+    color: white;
+    padding-left: 0; }
+  ul li a:visited {
+    color: white;
+    padding-left: 0; }
+
+li:first-of-type, li:last-of-type {
+  padding-left: 20px; }
+
+.glyphicon-cog, .glyphicon-menu-hamburger {
+  color: white;
+  font-size: 1.5em; }
 
 .navLogo {
-  width: auto;
-  height: 49px; }
+  width: 80%;
+  height: auto; }
 
 .logoCent {
   text-align: center; }
 
+.dropdown-menu {
+  background-color: #29232C;
+  margin: 0; }
+
 .placeholderNav {
-  margin-bottom: 0; }
+  margin-bottom: 5%;
+  width: 100%;
+  height: 154px; }
 
 #loginContainer {
   width: 80%;
@@ -73,10 +117,10 @@ input:-ms-input-placeholder {
   left: 50%;
   transform: translate(-50%, -50%); }
   #loginContainer .loginIcons {
-    width: 40px;
-    height: auto; }
+    width: auto;
+    height: 3em; }
   #loginContainer .input-group {
-    margin: 10px 0; }
+    margin: 30px 0; }
   #loginContainer .input-group-addon {
     background-color: transparent;
     border-radius: 0;
@@ -91,8 +135,9 @@ input:-ms-input-placeholder {
     border: none;
     border-bottom: 2px solid white;
     letter-spacing: 3px;
-    height: 57px;
-    border-radius: 0; }
+    border-radius: 0;
+    font-size: 1.5em;
+    height: 1.5em; }
   #loginContainer .loginButton {
     background-color: transparent;
     color: white;
@@ -104,7 +149,7 @@ input:-ms-input-placeholder {
     letter-spacing: 3px;
     font-weight: bold;
     padding: 5px 0;
-    margin-top: 30px; }
+    margin-top: 50px; }
   #loginContainer .facebookBox {
     width: 100%;
     margin-top: 10px; }
@@ -130,14 +175,17 @@ input:-ms-input-placeholder {
   transform: translate(-50%, -50%);
   width: 80%; }
   #addDevicePage h3 {
-    display: inline-block; }
+    display: inline-block;
+    font-size: 2em; }
   #addDevicePage h5 {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    font-size: 1.5em; }
   #addDevicePage hr {
-    width: 60%; }
+    width: 60%;
+    height: 1.25em; }
   #addDevicePage img {
-    width: 100px;
-    height: 100px; }
+    width: 40%;
+    height: auto; }
   #addDevicePage img:first-of-type {
     background-color: white;
     margin-right: 20px; }
@@ -160,12 +208,22 @@ input:-ms-input-placeholder {
   color: white; }
   #profilePage .profileImg {
     border-radius: 100%;
-    margin-top: 15px; }
+    width: 60%; }
+  #profilePage h3 {
+    margin: 5%;
+    font-size: 2em; }
+  #profilePage hr {
+    width: 30%; }
   #profilePage .profileIcons {
-    width: auto;
-    height: 75px; }
+    width: 70%;
+    height: auto; }
   #profilePage p {
+    font-size: 1.4em;
     padding-top: 10px; }
+  #profilePage article {
+    margin-top: 37.5px; }
+    #profilePage article .row:nth-of-type(2) {
+      margin-top: 37.5px; }
 
 #savedConcerts {
   width: 100%; }

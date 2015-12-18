@@ -1,6 +1,37 @@
 <!-- fixednav -->
-<nav ng-controller="navCtrl"class="navbar navbar-fixed-top">	
-  <div class="container">
+<nav ng-controller="navCtrl" class="navbar navbar-fixed-top">	
+  <div>
+		<div class="row">
+			<div class="col-xs-2 navCog">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+			</div>
+			<div class="col-xs-8 logoCent">
+				<img class="navLogo" src="../css/images/logo.png">
+			</div>
+			<div class="col-xs-2 navHam">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle navHamStyle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+							<li ng-click="profile()">Profile</li>
+							<li><a href="#/concerts/{{you.uid}}">My Concerts</a></li>
+							<li><a href="#/friends/{{you.uid}}">Friends</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#/search">Search Concerts</a></li>
+							<li><a href="#/users">Search Users</a></li>
+							<li role="separator" class="divider"></li>
+							<li ng-click="logout()">Logout</li>
+						</ul>
+					</div>
+  				</div>
+			</div>
+		</div>
+</nav>
+
+<!-- placeholder nav -->
+<nav ng-controller="navCtrl" class="navbar placeholderNav">	
+  <div>
 		<div class="row">
 			<div class="col-xs-2">
 				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
@@ -27,25 +58,4 @@
   				</div>
 			</div>
 		</div>
-</nav>
-
-<!-- placeholder nav -->
-<nav ng-controller="navCtrl"class="navbar navbar-inverse placeholderNav">	
-  <div class="container">
-	<div class="dropdown">
-		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-			<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-		</button>
-		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-		<li ng-click="profile()">Profile</li>
-		<li><a href="#/concerts/{{you.uid}}">My Concerts</a></li>
-		<li><a href="#/friends/{{you.uid}}">Friends</a></li>
-		<li role="separator" class="divider"></li>
-		<li><a href="#/search">Search Concerts</a></li>
-		<li><a href="#/users">Search Users</a></li>
-		<li role="separator" class="divider"></li>
-		<li ng-click="logout()">Logout</li>
-		</ul>
-	</div>
-  </div>
 </nav>

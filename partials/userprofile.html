@@ -1,32 +1,30 @@
 <section ng-include="'partials/navbar.html'"></section>
 <article id="profilePage">
 	<img class="profileImg"src="{{ProfileCtrl.me.pic}}"/>
-	<h1>{{ProfileCtrl.me.name}}</h1>
+	<h3>{{ProfileCtrl.me.name}}</h3>
+	<hr>
 	<article>
 		<!-- first row -->
 		<div class="row">
-		<div class="col-xs-1"></div>
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<a href=""><img class="profileIcons" src="../css/images/profile_icon.png"></a>
 				<p>Boogie Score: {{ProfileCtrl.avg}}</p>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<a href="/#/concerts/{{ProfileCtrl.me.uid}}"><img class="profileIcons" src="../css/images/profile_icon.png"></a>
 				<p>Saved Concerts</p>
 			</div>
-			<div class="col-xs-1"></div>
 		</div>
 		<!-- second row -->
 		<div class="row">
-			<div class="col-xs-1"></div>
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<a href="#/search"><img class="profileIcons" src="../css/images/profile_icon.png"></a>
 				<p>Find Concerts</p>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<a href="#/friends/{{ProfileCtrl.me.uid}}"><img class="profileIcons" src="../css/images/profile_icon.png"></a>
 				<p>Find Friends</p>
 			</div>
-			<div class="col-xs-1"></div>
 		</div>
 	</article>
+</article>
