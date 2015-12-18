@@ -3,7 +3,7 @@ body, h1 {
   padding: 0; }
 
 body {
-  background-image: url("./images/background_image.svg");
+  background-image: url("../css/images/background_image.svg");
   background-color: #413544;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
@@ -28,6 +28,9 @@ input {
   margin: 0;
   border-bottom: 2px solid white; }
 
+input[placeholder] {
+  color: white; }
+
 input::-webkit-input-placeholder {
   color: #fff !important;
   opacity: 1 !important; }
@@ -42,8 +45,9 @@ input:-ms-input-placeholder {
   color: #fff; }
 
 #appLogo {
-  width: 70%;
-  height: auto; }
+  width: 80%;
+  height: auto;
+  margin-bottom: 10px; }
 
 .navbar {
   background-color: #29232C; }
@@ -62,9 +66,8 @@ input:-ms-input-placeholder {
   margin-bottom: 0; }
 
 #loginContainer {
-  width: 70%;
+  width: 80%;
   text-align: center;
-  border: 1px solid black;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -97,10 +100,11 @@ input:-ms-input-placeholder {
     display: block;
     width: 100%;
     outline: none;
-    padding: 10px 0;
     font-size: 1.7em;
     letter-spacing: 3px;
-    font-weight: bold; }
+    font-weight: bold;
+    padding: 5px 0;
+    margin-top: 30px; }
   #loginContainer .facebookBox {
     width: 100%;
     margin-top: 10px; }
@@ -119,10 +123,24 @@ input:-ms-input-placeholder {
 
 #addDevicePage {
   text-align: center;
-  color: white; }
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; }
   #addDevicePage h3 {
-    display: inline-block;
-    border-bottom: 2px solid white; }
+    display: inline-block; }
+  #addDevicePage h5 {
+    margin-bottom: 30px; }
+  #addDevicePage hr {
+    width: 60%; }
+  #addDevicePage img {
+    width: 100px;
+    height: 100px; }
+  #addDevicePage img:first-of-type {
+    background-color: white;
+    margin-right: 20px; }
   #addDevicePage #addDeviceButton {
     background-color: transparent;
     color: white;
@@ -130,12 +148,12 @@ input:-ms-input-placeholder {
     display: block;
     width: 100%;
     outline: none;
-    padding: 10px 0;
     font-size: 1.7em;
     letter-spacing: 3px;
     font-weight: bold;
     width: 80%;
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 10px; }
 
 #profilePage {
   text-align: center;
@@ -196,7 +214,6 @@ input:-ms-input-placeholder {
   display: block;
   width: 100%;
   outline: none;
-  padding: 10px 0;
   font-size: 1.7em;
   letter-spacing: 3px;
   font-weight: bold;
@@ -211,7 +228,6 @@ input:-ms-input-placeholder {
   display: block;
   width: 100%;
   outline: none;
-  padding: 10px 0;
   font-size: 1.7em;
   letter-spacing: 3px;
   font-weight: bold;
@@ -237,7 +253,6 @@ input:-ms-input-placeholder {
   display: block;
   width: 100%;
   outline: none;
-  padding: 10px 0;
   font-size: 1.7em;
   letter-spacing: 3px;
   font-weight: bold;
@@ -318,7 +333,6 @@ input:-ms-input-placeholder {
   display: block;
   width: 100%;
   outline: none;
-  padding: 10px 0;
   font-size: 1.7em;
   letter-spacing: 3px;
   font-weight: bold;

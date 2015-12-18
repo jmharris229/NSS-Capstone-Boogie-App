@@ -1,12 +1,14 @@
 $background-color: #413544;
 
+//normalizer on page defaults
 body,h1{
 	margin: 0;
 	padding:0;
 }
 
+//basic elements
 body{
-	background-image: url('./images/background_image.svg');
+	background-image: url('../css/images/background_image.svg');
 	background-color: $background-color;
 	background-size: cover;
 	font-family: 'Open Sans', sans-serif;
@@ -26,7 +28,6 @@ ul{
 	padding-left: 0;
 }
 
-//basic elements
 input{
 	display: block;
 	background-color: rgba(0,0,0,0);
@@ -34,6 +35,9 @@ input{
 	padding: 0;
 	margin: 0;
 	border-bottom:2px solid white;
+}
+input[placeholder]{
+	color:white;
 }
 //changes placeholder text color
 input::-webkit-input-placeholder { color:#fff !important; opacity: 1 !important; }
@@ -43,8 +47,9 @@ input:-ms-input-placeholder {color:#fff ;}
 
 //logo styling
 #appLogo{
-	width:70%;
+	width:80%;
 	height: auto;
+	margin-bottom:10px;
 	}
 
 //button styles
@@ -55,20 +60,22 @@ input:-ms-input-placeholder {color:#fff ;}
 		display: block;
 		width: 100%;
 		outline: none;
-		padding: 10px 0;
 		font-size: 1.7em;
 		letter-spacing: 3px;
 		font-weight: bold;
 }
 
+//usually used for a full page section so everything that's in it gets centered, with white text
 @mixin basicPage{
 	text-align:center;
 	color: white;
 }
+
 @mixin roundedImg{
 	border-radius: 100%;
 }
 
+//used for headers on each page. this is the fixed div
 @mixin pageHeader{
 	background-color: $background-color;
 	position: fixed;
@@ -77,7 +84,7 @@ input:-ms-input-placeholder {color:#fff ;}
 	width:100%;
 }
 
-// navbar
+// navbar section
 .navbar{
 	background-color: #29232C;
 }
@@ -97,9 +104,8 @@ input:-ms-input-placeholder {color:#fff ;}
 
 //login page
 #loginContainer{
-	width:70%;
+	width:80%;
 	text-align:center;
-	border:1px solid black;
 	position: absolute;
   	top: 50%;
   	left: 50%;
@@ -136,6 +142,8 @@ input:-ms-input-placeholder {color:#fff ;}
 	}
 	.loginButton{
 		@include buttonStyles;
+		padding: 5px 0;
+		margin-top: 30px;
 	}
 	.facebookBox{
 		width: 100%;
@@ -161,14 +169,34 @@ input:-ms-input-placeholder {color:#fff ;}
 //add device section
 #addDevicePage{
 	@include basicPage;
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	width: 80%;
 	h3{
 		display: inline-block;
-		border-bottom: 2px solid white;
+		// border-bottom: 2px solid white;
+	}
+	h5{
+		margin-bottom: 30px;
+	}
+	hr{
+		width: 60%;
+	}
+	img{
+		width: 100px;
+		height: 100px;
+	}
+	img:first-of-type{
+		background-color:white;
+		margin-right: 20px;
 	}
 	#addDeviceButton{
 		@include buttonStyles;
 		width: 80%;
 		display: inline-block;
+		margin-top: 10px;
 	}
 }
 
