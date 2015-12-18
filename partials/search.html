@@ -17,7 +17,7 @@
 	<h5>{{message}}</h5>
 	<ul>
 		<li class="singleConcert"ng-repeat="concert in concertsArray">
-			<p>{{concert.venue.name}} &#9734
+			<p>{{concert.venue.name}}
 			<button  ng-click="saveConcert(concertsArray[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">ADD</button>
 			</p>
 			<ul>

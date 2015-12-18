@@ -4,13 +4,17 @@ app.controller('savedconcertsCtrl',
 	'$routeParams',
 	function(fireAuth, $firebaseArray,$routeParams){
 		
+		//removes background image
 		$('body').css('background-image', 'none');
+
+		//gets user id
 		var you = $routeParams.id;
 		var me = fireAuth.getAuth();
 
 		this.authObj = you;
 		this.me = me.uid;
-		//saved concerts
+
+		//gets saved concerts for current user
 		var concertRef = new Firebase("https://boogie.firebaseio.com/concerts")
 				.orderByChild("userId")
 				.equalTo(you);
@@ -28,7 +32,7 @@ app.controller('savedconcertsCtrl',
 			});
 		};
 
-		//ng hide 
+		//ng hide on delete button 
 		this.hideDelete = function(){
 			if(you.uid){
 				return false;

@@ -6,12 +6,14 @@ app.controller('authCtrl',
 	'$firebaseAuth',
 	function($scope,Authref, $currentAcct, $location, $firebaseAuth){
 		
+		//sets the background image for the login screen
 		$('body').css('background-image', '../css/images/background_image.svg');
+		
 		//login a user using facebook
 		var fbid;
-
 		var boogieRef = new Firebase("https://boogie.firebaseio.com/");
 
+		//change in authentication state function
 		boogieRef.onAuth(function (authData) {
 			if ( authData ) {
 					location.href = '/#/adddevice/';
@@ -20,12 +22,14 @@ app.controller('authCtrl',
 			}
 		});
 
+		//facebook login
 		$scope.fbLogin = function(){
 			Authref.authWithOAuthPopup("facebook", function(error, authData) {
 				if (error) {
 			   	console.log("Login Failed!", error);
 			  	} else {
 			   	fbid = authData.uid;
+			   	//creates node in firebase with facebook user id
 			   	var newUserRef = new Firebase("https://boogie.firebaseio.com/users/"+authData.uid);
 					newUserRef.push({
 						name: authData.facebook.cachedUserProfile.first_name,
@@ -38,6 +42,7 @@ app.controller('authCtrl',
 			});
 		};
 
+		//create a user with email
 		$scope.CreateUser = function(){
 			var boogieUsers = new Firebase("https://boogie.firebaseio.com");
 			console.log($scope.user);
@@ -58,21 +63,19 @@ app.controller('authCtrl',
 				console.log("user not created with error:" +error);
 			});
 		};
-			$scope.loginUser = function(){
-				Authref.$authWithPassword({
-					email: $scope.email,
-					password: $scope.password
-				}).then(function(userData){
-					console.log("user logged in with id:" +userData.uid);
-					location.href = '/#/adddevice/';
-				}).catch(function(error){
-					console.log("user not logged with error:" +error);
-				});
-			};
 
-
-
-
+		//login a user
+		$scope.loginUser = function(){
+			Authref.$authWithPassword({
+				email: $scope.email,
+				password: $scope.password
+			}).then(function(userData){
+				console.log("user logged in with id:" +userData.uid);
+				location.href = '/#/adddevice/';
+			}).catch(function(error){
+				console.log("user not logged with error:" +error);
+			});
+		};
 	}]);
 
 
