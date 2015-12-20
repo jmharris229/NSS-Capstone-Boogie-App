@@ -39,6 +39,7 @@ app.controller('searchconcertCtrl',
       //user generated search
       $scope.searchBand = function(){
       	var bandname = $('#searchBandBar').val().toLowerCase();
+      	$("#searchConcerts").removeClass("searchMiddle");
       	bitreq.getResultsSearch(bandname)
       		.then(
       			function(concertData){
