@@ -257,6 +257,8 @@ li:first-of-type, li:last-of-type {
       font-size: 2em; }
     #savedConcerts ul .singleConcert ul {
       font-size: .85em; }
+  #savedConcerts .singleConcert:first-of-type, #savedConcerts .singleConcert:last-of-type {
+    padding-left: 0; }
 
 .concertDets {
   display: inline-block;
@@ -458,10 +460,13 @@ li:first-of-type, li:last-of-type {
   text-align: center; }
   .singleConcertInfo h3 {
     font-size: 2em;
-    padding: 30px 0; }
+    padding: 30px 0;
+    letter-spacing: 5px; }
   .singleConcertInfo ul {
-    font-size: .5em;
+    font-size: .45em;
     padding-bottom: 50px; }
+    .singleConcertInfo ul li {
+      letter-spacing: 5px; }
 
 .singleConcertButtonDiv {
   width: 90%;
@@ -483,17 +488,24 @@ li:first-of-type, li:last-of-type {
   font-weight: bold;
   width: 90%;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  font-size: .8em;
+  letter-spacing: 5px; }
 
 .singleConcertButton:first-of-type {
-  margin-bottom: 20px; }
+  margin-bottom: 40px; }
 
 .singleLeaderBoard {
   margin-top: 20px; }
   .singleLeaderBoard h3 {
-    text-align: center; }
+    text-align: center;
+    font-size: 2em;
+    padding: 30px 0;
+    letter-spacing: 5px; }
   .singleLeaderBoard ul {
-    padding: 0 3%; }
+    padding: 0 3%;
+    height: 570px;
+    overflow: hidden; }
     .singleLeaderBoard ul li {
       padding-bottom: 10px;
       border-bottom: 2px solid white; }
@@ -501,7 +513,9 @@ li:first-of-type, li:last-of-type {
         border-radius: 100%;
         width: 50px; }
       .singleLeaderBoard ul li div {
-        display: inline-block; }
+        display: inline-block;
+        font-size: .5em;
+        width: 100%; }
         .singleLeaderBoard ul li div span {
           float: right; }
 

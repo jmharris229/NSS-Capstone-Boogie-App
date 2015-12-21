@@ -326,6 +326,9 @@ ul{
 			font-size: .85em;
 		}
 	}
+	.singleConcert:first-of-type, .singleConcert:last-of-type{
+		padding-left:0;
+	}
 }
 .concertDets{
 		display: inline-block;
@@ -537,11 +540,13 @@ ul{
 	h3{
 		font-size: 2em;
 		padding:30px 0;
+		letter-spacing: 5px;
 	}
 	ul{
-		font-size: .5em;
+		font-size: .45em;
 		padding-bottom:50px;
 		li{
+			letter-spacing: 5px;
 		}
 	}
 }
@@ -558,17 +563,24 @@ ul{
 	width: 90%;
 	margin: 0 auto;
 	text-align:center;
+	font-size:.8em;
+	letter-spacing:5px;
 }
 .singleConcertButton:first-of-type{
-	margin-bottom:20px;
+	margin-bottom:40px;
 }
 .singleLeaderBoard{
 	margin-top: 20px;
 	h3{
 		text-align: center;
+		font-size: 2em;
+		padding:30px 0;
+		letter-spacing: 5px;
 	}
 	ul{
 		padding: 0 3%;
+		height: 570px;
+		overflow: hidden;
 		li{
 			padding-bottom: 10px;
 			border-bottom: 2px solid white;
@@ -578,6 +590,8 @@ ul{
 			}
 			div{
 				display: inline-block;
+				font-size: .5em;
+				width:100%;
 				span{
 					float: right;
 				}

@@ -27,10 +27,10 @@
 	<h3>LEADER BOARD</h3>
 	<ul>
 		<li ng-repeat="item in ConcertCtrl.attendees | orderBy: '-concertSteps' : reverse">
-			<img src="{{item.pic}}">
+<!-- 			<img src="{{item.pic}}"> -->
 			<div>
-			{{item.name}}
-			<span>Boogie Score: {{item.concertSteps}}</span>
+				<p>{{item.name}}<span> {{item.concertSteps}}</span></p>
+
 			</div>	
 		</li>
 	</ul>
