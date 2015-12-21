@@ -38,13 +38,14 @@ app.controller('userListCtrl',
 		};
 
 		//function to add a friend on add button click
-		this.addFriend = function(Id, name, pic){
+		this.addFriend = function(Id, name, pic, steps){
 			var createFriend = new Firebase("https://boogie.firebaseio.com/users/"+you.auth.uid+"/friends/"+Id);
 			createFriend.set({
 				uid: Id,
 				name: name,
 				pic:pic, 
-				savedState: true
+				savedState: true,
+				concertSteps: steps
 			});
 		};
 

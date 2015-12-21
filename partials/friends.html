@@ -1,13 +1,13 @@
 <section ng-include="'partials/navbar.html'"></section>
-<div class="friendsPlaceholder">
-	<h1>FRIENDS</h1>	
-</div>
-<div>
-	<h1>FRIENDS</h1>	
-</div>
+<h1 id="friendsHeader">FRIENDS</h1>	
+<hr id="friendsHR">
 <ul id="friendsList">
 	<li ng-repeat="friend in FriendlistCtrl.friendsArray" ng-click="FriendlistCtrl.gotoUser(friend.$id)">
 		<img src="{{friend.pic}}"/>
+		<div>
 		<a href="/#/profile/{{friend.uid}}">{{friend.name}}</a>
+		<p>Boogie Score: {{friend.concertSteps}}</p>
+		<!-- <p>Last Concert:</p> -->
+		</div>
 	</li>
 </ul>

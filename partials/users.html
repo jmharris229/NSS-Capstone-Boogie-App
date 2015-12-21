@@ -12,7 +12,7 @@
 		<img src="{{user.pic}}">
 		<div>
 			<a href="/#/profile/{{user.uid}}">{{user.name}}</a>
-			<button class="userSearch" ng-hide="UserListCtrl.isFriend(user.uid)" ng-click="UserListCtrl.addFriend(user.$id, user.name, user.pic)">ADD</button>
+			<button class="userSearch" ng-hide="UserListCtrl.isFriend(user.uid)" ng-click="UserListCtrl.addFriend(user.$id, user.name, user.pic, user.concertSteps)">ADD</button>
 			<p>Boogie Score: {{user.concertSteps}}</p>
 		</div>
 	</li>

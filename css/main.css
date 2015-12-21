@@ -259,8 +259,7 @@ li:first-of-type, li:last-of-type {
     #searchConcerts div .findaConcerthead {
       font-size: 1.5em;
       margin-bottom: 0;
-      letter-spacing: 3px;
-      margin-bottom: 0; }
+      letter-spacing: 3px; }
     #searchConcerts div hr.findaConcerthead {
       width: 65%;
       margin-bottom: 40px; }
@@ -383,26 +382,33 @@ li:first-of-type, li:last-of-type {
       .userList li div a:hover {
         text-decoration: none; }
 
-.friendsPlaceholder {
-  background-color: #413544;
-  position: fixed;
-  display: block;
+#friendsHeader {
   text-align: center;
-  width: 100%;
-  text-align: center; }
+  display: block;
+  letter-spacing: 3px;
+  margin-bottom: 0; }
+
+#friendsHR {
+  width: 15%;
+  margin-bottom: 40px; }
 
 #friendsList {
-  padding: 0 3%; }
+  font-size: .6em; }
   #friendsList li {
     padding-bottom: 10px;
     border-bottom: 2px solid white; }
+    #friendsList li div {
+      display: inline-block; }
     #friendsList li img {
       border-radius: 100%;
-      width: 50px; }
+      width: 20%;
+      margin-right: 20px; }
     #friendsList li a {
       color: white; }
     #friendsList li a:hover {
       text-decoration: none; }
+    #friendsList li p {
+      margin: 0; }
 
 .singleConcertPlaceholder {
   background-color: #413544;

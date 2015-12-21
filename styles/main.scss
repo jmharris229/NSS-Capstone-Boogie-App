@@ -329,7 +329,6 @@ ul{
 			font-size: 1.5em;
 			margin-bottom: 0;
 			letter-spacing: 3px;
-			margin-bottom: 0;
 		}
 		hr.findaConcerthead{
 			width: 65%;
@@ -445,24 +444,37 @@ ul{
 }
 
 //friend list
-.friendsPlaceholder{
-	@include pageHeader;
+#friendsHeader{
 	text-align:center;
+	display:block;
+	letter-spacing:3px;
+	margin-bottom:0;
+}
+#friendsHR{
+	width:15%;
+	margin-bottom:40px;
 }
 #friendsList{
-	padding: 0 3%;
+	font-size: .6em;
 	li{
 		padding-bottom: 10px;
 		border-bottom: 2px solid white;
+		div{
+			display: inline-block;
+		}
 		img{
 			border-radius: 100%;
-			width: 50px;
+			width: 20%;
+			margin-right: 20px;
 		}
 		a{
 			color: white;
 		}
 		a:hover{
 			text-decoration: none;
+		}
+		p{
+			margin: 0;
 		}
 	}
 }
