@@ -55,7 +55,8 @@ input:-ms-input-placeholder {
 .navbar {
   background-color: #29232C;
   height: auto;
-  line-height: 135px; }
+  line-height: 135px;
+  margin-bottom: 0; }
 
 .navCog {
   text-align: center;
@@ -106,7 +107,6 @@ li:first-of-type, li:last-of-type {
   margin: 0; }
 
 .placeholderNav {
-  margin-bottom: 5%;
   width: 100%;
   height: 154px; }
 
@@ -206,7 +206,8 @@ li:first-of-type, li:last-of-type {
   color: white; }
   #profilePage .profileImg {
     border-radius: 100%;
-    width: 60%; }
+    width: 60%;
+    margin-top: 5%; }
   #profilePage h3 {
     margin: 5%;
     font-size: 2em; }
@@ -255,13 +256,16 @@ li:first-of-type, li:last-of-type {
   #searchConcerts div {
     display: block;
     text-align: center; }
-    #searchConcerts div h1 {
+    #searchConcerts div .findaConcerthead {
       font-size: 1.5em;
       margin-bottom: 0;
-      letter-spacing: 3px; }
-    #searchConcerts div hr {
+      letter-spacing: 3px;
+      margin-bottom: 0; }
+    #searchConcerts div hr.findaConcerthead {
       width: 65%;
       margin-bottom: 40px; }
+    #searchConcerts div h1 {
+      margin-bottom: 0; }
   #searchConcerts input {
     letter-spacing: 3px;
     margin-bottom: 40px;
@@ -273,6 +277,8 @@ li:first-of-type, li:last-of-type {
     display: block;
     text-align: center;
     width: 100%; }
+  #searchConcerts .resultsSection {
+    margin-top: 367.5px; }
   #searchConcerts ul .singleConcert {
     border-bottom: 2px solid white;
     padding-bottom: 20px;
@@ -312,6 +318,13 @@ li:first-of-type, li:last-of-type {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+
+.topSearch {
+  position: fixed;
+  z-index: 10;
+  background-color: #413544;
+  width: 750px;
+  margin-top: -367.5px; }
 
 .userSearchBar {
   padding-top: 1.5em;

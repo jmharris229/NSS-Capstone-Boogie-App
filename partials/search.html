@@ -1,28 +1,19 @@
 <section ng-include="'partials/navbar.html'"></section>
 <section id="searchConcerts" class="searchMiddle">
-	<div class="fixedHeader">
-		<h1>FIND A CONCERT</h1>
-		<hr>
-		<input id="searchBandBar" type="text" placeholder="BAND NAME"/>
-		<input id="searchLocation" type="text" placeholder="LOCATION"/>
-		<button class="searchButton" ng-click="searchBand()">SEARCH</button>
-	</div>
-	<div>
-		<h1>FIND A CONCERT</h1>
-		<hr>
+	<div id="searchSection">
+		<h1 class="findaConcerthead">FIND A CONCERT</h1>
+		<hr class="findaConcerthead">
 		<input id="searchBandBar" type="text" placeholder="search a band"/>
 		<input id="searchLocation" type="text" placeholder="search by location"/>
 		<button class="searchButton" ng-click="searchBand()">SEARCH</button>
+		<h1 class="">{{message}}</h1>
 	</div>
-	<h1 class="fixedHeader">{{concertsArray[0].artists[0].name}}</h1>
-	<h1>{{concertsArray[0].artists[0].name}}</h1>
-	<h5>{{message}}</h5>
-	<ul>
+	<ul class="resultsSection">
 		<li class="singleConcert"ng-repeat="concert in concertsArray">
-			<p>{{concert.venue.name}}
-			<button  ng-click="saveConcert(concertsArray[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">ADD</button>
+			<p>
 			</p>
 			<ul>
+				<li>{{concert.venue.name}}<button  ng-click="saveConcert(concertsArray[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">ADD</button></li>
 				<li>{{concert.venue.city}}, {{concert.venue.region}}</li>
 				<li>{{concert.formatted_datetime}}</li>
 			</ul>

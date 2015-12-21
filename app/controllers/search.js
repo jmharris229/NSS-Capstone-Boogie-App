@@ -40,6 +40,22 @@ app.controller('searchconcertCtrl',
       $scope.searchBand = function(){
       	var bandname = $('#searchBandBar').val().toLowerCase();
       	$("#searchConcerts").removeClass("searchMiddle");
+      	$("#searchSection").addClass("topSearch");
+      	$(".findaConcerthead").css("display","none");
+      	$("#searchBandBar").css("margin-top", "37.5px");
+
+			(function() {        
+			   var timer;
+			   $(window).bind('scroll',function () {
+			       clearTimeout(timer);
+			       timer = setTimeout( refresh , 150 );
+			       $("#searchSection").fadeOut("fast");
+			   });
+			   var refresh = function () { 
+			       // do stuff
+			       $("#searchSection").fadeIn("fast");
+			   };
+			})();
       	bitreq.getResultsSearch(bandname)
       		.then(
       			function(concertData){
@@ -50,7 +66,7 @@ app.controller('searchconcertCtrl',
       				}else{	
       					//consearcharray = a list of saved ids	
 	      				var conSearchArray = [];
-	      				$scope.message = "";
+	      				$scope.message = bandname.toUpperCase();
 
 	      				//loops over concertidlist and checks to see for each if the current search name equals the iterations name, then push to consearcharray
 	      				for(var i=0; i<concertIdList.length;i++){
