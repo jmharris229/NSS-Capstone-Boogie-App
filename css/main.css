@@ -228,7 +228,21 @@ li:first-of-type, li:last-of-type {
   width: 100%; }
   #savedConcerts div {
     display: block;
-    text-align: center; }
+    text-align: center;
+    padding-bottom: 30px; }
+    #savedConcerts div hr {
+      width: 35%; }
+    #savedConcerts div h1 {
+      margin-bottom: 0; }
+    #savedConcerts div input {
+      display: block;
+      width: 100%;
+      margin-top: 40px; }
+    #savedConcerts div input[placeholder] {
+      letter-spacing: 3px; }
+    #savedConcerts div input::-webkit-input-placeholder {
+      color: #D3D3D3 !important;
+      opacity: 1 !important; }
   #savedConcerts .fixedHeader {
     background-color: #413544;
     position: fixed;

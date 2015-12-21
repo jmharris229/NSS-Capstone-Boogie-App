@@ -295,6 +295,22 @@ ul{
 	div{
 		display: block;
 		text-align: center;
+		padding-bottom: 30px;
+		hr{
+			width: 35%;
+		}
+		h1{
+			margin-bottom: 0;
+		}
+		input{
+			display: block;
+			width: 100%;
+			margin-top: 40px;
+		}
+		input[placeholder]{
+			letter-spacing: 3px;
+		}
+		input::-webkit-input-placeholder { color:#D3D3D3 !important; opacity: 1 !important; }
 	}
 	.fixedHeader{
 		@include pageHeader;

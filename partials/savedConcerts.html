@@ -1,10 +1,12 @@
 <section ng-include="'partials/navbar.html'"></section>
 <section id="savedConcerts">
 	<div>
-		<h1>Saved Concerts</h1>
+		<h1>SAVED CONCERTS</h1>
+		<hr>
+		<input placeholder="SEARCH FOR A CONCERT..." type="text" ng-model="query" />
 	</div>
 	<ul>
-		<li class="singleConcert" ng-repeat="concert in SavedconcertCtrl.userConcerts" ng-click="SavedconcertCtrl.gotoConcert(concert.$id)">
+		<li class="singleConcert" ng-repeat="concert in SavedconcertCtrl.userConcerts | filter: query" ng-click="SavedconcertCtrl.gotoConcert(concert.$id)">
 			<h3 class="bandName">
 				{{concert.bandName}} | {{concert.rating}}
 				<span ng-show="SavedconcertCtrl.me === concert.userId" ng-click="SavedconcertCtrl.removeConcert(concert.$id)" class="glyphicon glyphicon-remove-circle"></span>
