@@ -429,6 +429,7 @@ ul{
 	padding-top: 1.5em;
 	text-align:left;
 	padding: 1.5em 3%;
+		input::-webkit-input-placeholder { color:#D3D3D3 !important; opacity: 1 !important; }
 }
 .usersPlaceholder{
 	@include pageHeader;
@@ -442,11 +443,15 @@ ul{
 	display: inline-block;
 	padding:0 10px;
 	font-size: 1em;
-	border: none;
+	border: none;			
 }
 .findFriendInput{
 		display: inline-block;
+		width: 100%;
 	}
+.findFriendInput[placeholder]{
+	letter-spacing:5px;
+}
 .userList{
 	padding: 0 3%;
 	margin-top:20px;
@@ -455,10 +460,16 @@ ul{
 		border-bottom: 2px solid white;
 		img{
 			border-radius: 100%;
-			width: 50px;
+			// width: 50px;
 		}
 		div{
 			display: inline-block;
+			font-size: .6em;
+			vertical-align: middle;
+			letter-spacing: 5px;
+			p{
+				font-size: .8em;
+			}
 			button{
 				float: right;
 			}

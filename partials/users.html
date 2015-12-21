@@ -1,11 +1,6 @@
 <section ng-include="'partials/navbar.html'"></section>
-<div class="usersPlaceholder userSearchBar">
-	<input class="findFriendInput" type="text" placeholder="find a friend"/>
-	<button class="userSearch">SEARCH</button>
-</div>
 <div class="userSearchBar">
 	<input class="findFriendInput" type="text" placeholder="find a friend"/>
-	<button class="userSearch">SEARCH</button>
 </div>
 <ul class="userList">
 	<li ng-repeat="user in UserListCtrl.users" ng-if="UserListCtrl.hideYou(user.uid)">

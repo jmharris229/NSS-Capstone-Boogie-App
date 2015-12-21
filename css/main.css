@@ -357,6 +357,9 @@ li:first-of-type, li:last-of-type {
   padding-top: 1.5em;
   text-align: left;
   padding: 1.5em 3%; }
+  .userSearchBar input::-webkit-input-placeholder {
+    color: #D3D3D3 !important;
+    opacity: 1 !important; }
 
 .usersPlaceholder {
   background-color: #413544;
@@ -385,7 +388,11 @@ li:first-of-type, li:last-of-type {
   border: none; }
 
 .findFriendInput {
-  display: inline-block; }
+  display: inline-block;
+  width: 100%; }
+
+.findFriendInput[placeholder] {
+  letter-spacing: 5px; }
 
 .userList {
   padding: 0 3%;
@@ -394,10 +401,14 @@ li:first-of-type, li:last-of-type {
     padding-bottom: 10px;
     border-bottom: 2px solid white; }
     .userList li img {
-      border-radius: 100%;
-      width: 50px; }
+      border-radius: 100%; }
     .userList li div {
-      display: inline-block; }
+      display: inline-block;
+      font-size: .6em;
+      vertical-align: middle;
+      letter-spacing: 5px; }
+      .userList li div p {
+        font-size: .8em; }
       .userList li div button {
         float: right; }
       .userList li div a {
