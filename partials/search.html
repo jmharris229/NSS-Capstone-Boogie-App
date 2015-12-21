@@ -10,10 +10,8 @@
 	</div>
 	<ul class="resultsSection">
 		<li class="singleConcert"ng-repeat="concert in concertsArray">
-			<p>
-			</p>
 			<ul>
-				<li>{{concert.venue.name}}<button  ng-click="saveConcert(concertsArray[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">ADD</button></li>
+				<li>{{concert.venue.name}}<button class="hideAdd" ng-click="saveConcert(concertsArray[0].artists[0].name, concert.id, concert.title, concert.formatted_datetime, concert.venue)">ADD</button></li>
 				<li>{{concert.venue.city}}, {{concert.venue.region}}</li>
 				<li>{{concert.formatted_datetime}}</li>
 			</ul>

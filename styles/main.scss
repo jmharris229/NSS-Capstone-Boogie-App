@@ -350,6 +350,16 @@ ul{
 	}
 	.resultsSection{
 		margin-top: 367.5px;
+		li:first-of-type{
+				padding-left:0;
+				margin: 10px 0;
+			}
+		ul{
+			li{
+				padding-left:0;
+				font-size: 1em;
+			}
+		}
 	}
 
 	ul .singleConcert{
@@ -357,13 +367,12 @@ ul{
 		padding-bottom: 20px;
 		font-size: .4em;
 	}
-	ul .singleConcert p button{
+	ul .singleConcert li button{
 		float:right;
 		@include buttonStyles;
-		width: 50px;
-		height: 20px;
-		font-size: 14px;
-		padding:0;
+		width: auto;
+		font-size: 2em;
+		padding:0 5px;
 	}
 	.searchButton{
 		@include buttonStyles;

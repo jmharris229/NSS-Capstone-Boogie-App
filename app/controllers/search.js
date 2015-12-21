@@ -35,8 +35,8 @@ app.controller('searchconcertCtrl',
 	  			 	concertIdList.push({id: snapshot.val().concertId, name: snapshot.val().bandName.toLowerCase(), saved:snapshot.val().saveState});
 	  			 });
   			});
-
-      //user generated search
+  		var accessFilteredArray;
+  		//user generated search
       $scope.searchBand = function(){
       	var bandname = $('#searchBandBar').val().toLowerCase();
       	$("#searchConcerts").removeClass("searchMiddle");
@@ -95,12 +95,14 @@ app.controller('searchconcertCtrl',
 	      				}
 	      				//bound variable of search data to display
 	      				$scope.concertsArray = finalFilteredArray;
+	      				accessFilteredArray =finalFilteredArray;
 						}
       			},
       			function(error){
       				console.log(error);
       			});
       };
+
 
      	//go to a single concert detail
      	$scope.goToConcert = function(songId){

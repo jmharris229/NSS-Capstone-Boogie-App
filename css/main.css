@@ -279,11 +279,17 @@ li:first-of-type, li:last-of-type {
     width: 100%; }
   #searchConcerts .resultsSection {
     margin-top: 367.5px; }
+    #searchConcerts .resultsSection li:first-of-type {
+      padding-left: 0;
+      margin: 10px 0; }
+    #searchConcerts .resultsSection ul li {
+      padding-left: 0;
+      font-size: 1em; }
   #searchConcerts ul .singleConcert {
     border-bottom: 2px solid white;
     padding-bottom: 20px;
     font-size: .4em; }
-  #searchConcerts ul .singleConcert p button {
+  #searchConcerts ul .singleConcert li button {
     float: right;
     background-color: transparent;
     color: white;
@@ -294,10 +300,9 @@ li:first-of-type, li:last-of-type {
     font-size: 1.7em;
     letter-spacing: 3px;
     font-weight: bold;
-    width: 50px;
-    height: 20px;
-    font-size: 14px;
-    padding: 0; }
+    width: auto;
+    font-size: 2em;
+    padding: 0 5px; }
   #searchConcerts .searchButton {
     background-color: transparent;
     color: white;
