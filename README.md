@@ -10,7 +10,7 @@ You heard me right. How this app works, is a user will first search for an artis
 
 The score is saved to your profile and available to see by all of your friends. Not only can a friend see your scores, but concert attendees are able to see a live updating feed of other attendees and their scores, automatically sorting by highest to lowest. So after the dust settles, you know who danced their butts off out of all of your friends and can claim the title of "Lord of the Lawn (general lawn)"!
 
-**Please Note: This app was specifically designed for mobile and will not look good on desktop. To view, please enter a mobile view mode in your browser. Thanks! **
+**Please Note: This app was specifically designed for phones and will not look good on desktop. To view, please enter a mobile view mode in your browser or use on you cellphone . Thanks! **
 
 Frameworks, libraries, platforms used:
 
