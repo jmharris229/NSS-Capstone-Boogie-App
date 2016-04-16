@@ -111,6 +111,12 @@ app.controller('searchconcertCtrl',
 
       //saves a concert to users profile
       $scope.saveConcert = function(band, Id, title, date,venueObj){
+        //changes the add button after click
+        $('.hideAdd').on('click', function(){
+          $(this).css({"background-color": "white", "color":"#413544"});
+          $(this).text("ADDED");
+        });
+
       	var ref = new Firebase('https://boogie.firebaseio.com');
       	var authData = ref.getAuth();
       	var myConcerts = new Firebase("https://boogie.firebaseio.com/concerts/");
