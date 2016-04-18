@@ -15,4 +15,5 @@ app.controller('getfitbitdataCtrl',
 		this.fitbitrequest = function(){
 			$location.path("/profile/"+you.uid);
 		};
-	}]);
+	}]
+);

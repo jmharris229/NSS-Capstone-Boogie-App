@@ -44,18 +44,18 @@ app.controller('searchconcertCtrl',
       	$(".findaConcerthead").css("display","none");
       	$("#searchBandBar").css("margin-top", "37.5px");
 
-			(function() {        
-			   var timer;
-			   $(window).bind('scroll',function () {
-			       clearTimeout(timer);
-			       timer = setTimeout( refresh , 150 );
-			       $("#searchSection").fadeOut("fast");
-			   });
-			   var refresh = function () { 
-			       // do stuff
-			       $("#searchSection").fadeIn("fast");
-			   };
-			})();
+        //start timer to show search criteria
+  			(function() {        
+  			   var timer;
+  			   $(window).bind('scroll',function () {
+  			       clearTimeout(timer);
+  			       timer = setTimeout( refresh , 150 );
+  			       $("#searchSection").fadeOut("fast");
+  			   });
+  			   var refresh = function () { 
+  			       $("#searchSection").fadeIn("fast");
+  			   };
+  			 })();
       	bitreq.getResultsSearch(bandname)
       		.then(
       			function(concertData){
@@ -120,24 +120,24 @@ app.controller('searchconcertCtrl',
       	var ref = new Firebase('https://boogie.firebaseio.com');
       	var authData = ref.getAuth();
       	var myConcerts = new Firebase("https://boogie.firebaseio.com/concerts/");
-			myConcerts.push({
-            userId: authData.uid,
-            saveState: true,
-				concertId: Id,
-				bandName: band,
-				concertName: title,
-				concertDate: date,
-				startSteps:0,
-				endSteps:0,
-				difference: 0,
-				venueName: venueObj.name,
-				venueLat: venueObj.latitude,
-				venueLong: venueObj.longitude,
-				venueCity: venueObj.city,
-				venueState: venueObj.region
-			});
-			var userConcerts = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/concerts/");
-      	userConcerts.push(Id);
-      };
-	}]);
-
+  			myConcerts.push({
+              userId: authData.uid,
+              saveState: true,
+  				concertId: Id,
+  				bandName: band,
+  				concertName: title,
+  				concertDate: date,
+  				startSteps:0,
+  				endSteps:0,
+  				difference: 0,
+  				venueName: venueObj.name,
+  				venueLat: venueObj.latitude,
+  				venueLong: venueObj.longitude,
+  				venueCity: venueObj.city,
+  				venueState: venueObj.region
+  			});
+			   var userConcerts = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/concerts/");
+      	 userConcerts.push(Id);
+        };
+	}]
+);

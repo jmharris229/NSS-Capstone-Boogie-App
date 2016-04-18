@@ -24,7 +24,6 @@ app.controller('savedconcertsCtrl',
 
 		//remove concert function
 		this.removeConcert = function(concertId){
-			console.log(concertId);
 			this.userConcerts.$remove(this.userConcerts.$getRecord(concertId)).then(function(ref){
 					}, 
 					function(error){
@@ -43,4 +42,5 @@ app.controller('savedconcertsCtrl',
 		this.gotoConcert = function(id){
 			location.href='/#/concert/'+id;
 		};
-	}]);
+	}]
+);

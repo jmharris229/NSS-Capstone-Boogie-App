@@ -18,6 +18,5 @@ app.controller('navCtrl',
 			fireAuth.unauth();
 			$location.path('/#/');
 		};
-	}
-	]
+	}]
 );

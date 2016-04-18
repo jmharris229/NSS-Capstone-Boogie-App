@@ -45,7 +45,6 @@ app.controller('authCtrl',
 		//create a user with email
 		$scope.CreateUser = function(){
 			var boogieUsers = new Firebase("https://boogie.firebaseio.com");
-			console.log($scope.user);
 			boogieUsers.createUser({
 				email: $scope.user.email,
 				password: $scope.user.password
@@ -57,7 +56,6 @@ app.controller('authCtrl',
 						pic: "",
 						uid: authData.uid
 				});
-				console.log("user created with id:" +userData.uid);
  					$scope.loginUser();
 			}).catch(function(error){
 				console.log("user not created with error:" +error);
@@ -70,14 +68,10 @@ app.controller('authCtrl',
 				email: $scope.email,
 				password: $scope.password
 			}).then(function(userData){
-				console.log("user logged in with id:" +userData.uid);
 				location.href = '/#/adddevice/';
 			}).catch(function(error){
 				console.log("user not logged with error:" +error);
 			});
 		};
-	}]);
-
-
-
-
+	}]
+);

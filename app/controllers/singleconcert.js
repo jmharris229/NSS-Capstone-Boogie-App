@@ -108,8 +108,7 @@
 			//adds to the users ratings section which is used for averaging
 			var updateOverallScore = new Firebase("https://boogie.firebaseio.com/users/"+you.uid+"/ratings/");
 			updateOverallScore.push(stepDifference);
-			console.log("reached refresh");
 			location.reload(true);
 		}
-	}
-]);
+	}]
+);

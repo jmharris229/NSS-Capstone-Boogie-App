@@ -56,5 +56,5 @@ app.controller('userListCtrl',
 			}
 			return true;
 		};
-	}
-]);
+	}]
+);

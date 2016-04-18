@@ -34,4 +34,5 @@ app.controller('profileCtrl',
 			//bound variable to the dom and creates the average
 			this.avg = Math.ceil(total/averageRatingsArray.length);
 		}.bind(this));
-	}]);
+	}]
+);
